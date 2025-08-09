@@ -4,16 +4,6 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "devCommand": "npm run dev",
-  "env": {
-    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": "demo_project_id_placeholder",
-    "NEXT_PUBLIC_LOANIYO_ADDRESS": "0x0000000000000000000000000000000000000000"
-  },
-  "build": {
-    "env": {
-      "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": "@walletconnect_project_id",
-      "NEXT_PUBLIC_LOANIYO_ADDRESS": "@loaniyo_address"
-    }
-  },
   "functions": {
     "app/api/**": {
       "maxDuration": 30
