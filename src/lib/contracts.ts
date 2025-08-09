@@ -1,7 +1,14 @@
 export const CONTRACTS = {
   LOANIYO_LENDING: {
-    address: process.env.NEXT_PUBLIC_LOANIYO_ADDRESS as `0x${string}` || '0x0000000000000000000000000000000000000000', // Deploy and update this address
+    address: (process.env.NEXT_PUBLIC_LOANIYO_ADDRESS as `0x${string}`) || '0x0000000000000000000000000000000000000000',
     abi: [
+      // Constructor
+      {
+        "inputs": [{"name": "_token", "type": "address"}],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      // Main functions
       {
         "type": "function",
         "name": "deposit",
@@ -30,6 +37,7 @@ export const CONTRACTS = {
         "outputs": [],
         "stateMutability": "nonpayable"
       },
+      // View functions
       {
         "type": "function",
         "name": "getUserData",
@@ -49,14 +57,51 @@ export const CONTRACTS = {
         "name": "getGlobalData", 
         "inputs": [],
         "outputs": [
-          {"name": "totalDeposits", "type": "uint256"},
-          {"name": "totalBorrows", "type": "uint256"},
-          {"name": "availableLiquidity", "type": "uint256"},
-          {"name": "utilizationRate", "type": "uint256"},
-          {"name": "interestRate", "type": "uint256"}
+          {"name": "_totalDeposits", "type": "uint256"},
+          {"name": "_totalBorrows", "type": "uint256"},
+          {"name": "_availableLiquidity", "type": "uint256"},
+          {"name": "_utilizationRate", "type": "uint256"},
+          {"name": "_interestRate", "type": "uint256"}
         ],
         "stateMutability": "view"
       },
+      // Public variables (automatically create getter functions)
+      {
+        "type": "function",
+        "name": "token",
+        "inputs": [],
+        "outputs": [{"name": "", "type": "address"}],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "totalDeposits",
+        "inputs": [],
+        "outputs": [{"name": "", "type": "uint256"}],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "totalBorrows",
+        "inputs": [],
+        "outputs": [{"name": "", "type": "uint256"}],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "interestRate",
+        "inputs": [],
+        "outputs": [{"name": "", "type": "uint256"}],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "collateralRatio",
+        "inputs": [],
+        "outputs": [{"name": "", "type": "uint256"}],
+        "stateMutability": "view"
+      },
+      // Events
       {
         "type": "event",
         "name": "Deposit",

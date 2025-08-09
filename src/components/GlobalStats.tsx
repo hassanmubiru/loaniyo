@@ -4,14 +4,18 @@ import React from 'react'
 import { useReadContract } from 'wagmi'
 import { CONTRACTS } from '@/lib/contracts'
 import { formatUnits } from 'viem'
+import { useContractValidation, getContractInfo } from '@/lib/contractValidation'
 
 export function GlobalStats() {
+  const contractInfo = getContractInfo()
+  const { isValidContract, contractExists, error: validationError } = useContractValidation()
+  
   const { data: globalData, isLoading, error } = useReadContract({
     address: CONTRACTS.LOANIYO_LENDING.address,
     abi: CONTRACTS.LOANIYO_LENDING.abi,
     functionName: 'getGlobalData',
     query: {
-      enabled: !!CONTRACTS.LOANIYO_LENDING.address && CONTRACTS.LOANIYO_LENDING.address !== '0x0000000000000000000000000000000000000000',
+      enabled: contractInfo.hasValidAddress && isValidContract,
     }
   })
 
@@ -31,7 +35,7 @@ export function GlobalStats() {
     )
   }
 
-  if (error || !globalData || !CONTRACTS.LOANIYO_LENDING.address || CONTRACTS.LOANIYO_LENDING.address === '0x0000000000000000000000000000000000000000') {
+  if (error || !globalData || !contractInfo.hasValidAddress || !isValidContract) {
     return (
       <div className="bg-red-50 border border-red-200 rounded-lg p-4">
         <div className="flex items-center">
@@ -43,9 +47,18 @@ export function GlobalStats() {
         <p className="text-sm text-red-700 mt-1">
           Unable to load contract data. Please ensure the contract is deployed and the address is correct.
         </p>
-        <div className="mt-3 text-xs text-red-600">
-          <p>Contract Address: {CONTRACTS.LOANIYO_LENDING.address}</p>
-          <p>Error: {error?.message || 'Contract not found or not deployed'}</p>
+        <div className="mt-3 text-xs text-red-600 bg-red-100 p-2 rounded">
+          <p><strong>Contract Address:</strong> {contractInfo.address}</p>
+          <p><strong>Network:</strong> {contractInfo.network} (Chain ID: {contractInfo.chainId})</p>
+          <p><strong>USDC Address:</strong> {contractInfo.usdcAddress}</p>
+          {error && <p><strong>Error:</strong> {error.message}</p>}
+          {validationError && <p><strong>Validation Error:</strong> {validationError.message}</p>}
+          <p className="mt-2 text-red-700"><strong>Status:</strong> {
+            !contractInfo.hasValidAddress ? 'Invalid contract address' :
+            !contractExists ? 'Contract not found on blockchain' :
+            !isValidContract ? 'Contract validation failed' :
+            'Unknown error'
+          }</p>
         </div>
       </div>
     )
