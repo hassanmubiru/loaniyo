@@ -10,6 +10,9 @@ export function GlobalStats() {
     address: CONTRACTS.LOANIYO_LENDING.address,
     abi: CONTRACTS.LOANIYO_LENDING.abi,
     functionName: 'getGlobalData',
+    query: {
+      enabled: !!CONTRACTS.LOANIYO_LENDING.address && CONTRACTS.LOANIYO_LENDING.address !== '0x0000000000000000000000000000000000000000',
+    }
   })
 
   // Only use real contract data - no demo fallbacks
@@ -28,7 +31,7 @@ export function GlobalStats() {
     )
   }
 
-  if (error || !globalData) {
+  if (error || !globalData || !CONTRACTS.LOANIYO_LENDING.address || CONTRACTS.LOANIYO_LENDING.address === '0x0000000000000000000000000000000000000000') {
     return (
       <div className="bg-red-50 border border-red-200 rounded-lg p-4">
         <div className="flex items-center">
@@ -40,6 +43,10 @@ export function GlobalStats() {
         <p className="text-sm text-red-700 mt-1">
           Unable to load contract data. Please ensure the contract is deployed and the address is correct.
         </p>
+        <div className="mt-3 text-xs text-red-600">
+          <p>Contract Address: {CONTRACTS.LOANIYO_LENDING.address}</p>
+          <p>Error: {error?.message || 'Contract not found or not deployed'}</p>
+        </div>
       </div>
     )
   }
