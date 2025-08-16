@@ -5,8 +5,6 @@ import { useAccount } from 'wagmi'
 import { ConnectButton } from '@/components/ConnectButton'
 import { LendingInterface } from '@/components/LendingInterface'
 import { GlobalStats } from '@/components/GlobalStats'
-import { TransactionHistory } from '@/components/TransactionHistory'
-import { DataHistoryChart } from '@/components/DataHistoryChart'
 
 export default function Home() {
   const { isConnected } = useAccount()
@@ -80,46 +78,9 @@ export default function Home() {
           <div className="space-y-6 sm:space-y-8">
             <GlobalStats />
             
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-              {/* Lending Interface */}
-              <div className="lg:col-span-2">
-                <LendingInterface />
-              </div>
-
-              {/* Quick Stats Sidebar */}
-              <div className="space-y-6">
-                <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Your Position</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 text-sm sm:text-base">Deposited</span>
-                      <span className="font-medium text-sm sm:text-base">$0.00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 text-sm sm:text-base">Borrowed</span>
-                      <span className="font-medium text-sm sm:text-base">$0.00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 text-sm sm:text-base">Net APY</span>
-                      <span className="font-medium text-green-600 text-sm sm:text-base">0.00%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 text-sm sm:text-base">Health Factor</span>
-                      <span className="font-medium text-green-600 text-sm sm:text-base">∞</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* History Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-              {/* Transaction History */}
-              <TransactionHistory />
-
-              {/* Data History Chart */}
-              <DataHistoryChart />
+            {/* Main Content */}
+            <div className="max-w-4xl mx-auto">
+              <LendingInterface />
             </div>
           </div>
         )}

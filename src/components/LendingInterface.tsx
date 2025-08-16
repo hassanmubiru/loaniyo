@@ -3,29 +3,37 @@
 import React, { useState } from 'react'
 
 export function LendingInterface() {
-  const [showModal, setShowModal] = useState(false)
-  const [modalType, setModalType] = useState('')
-  const [amount, setAmount] = useState('')
-  const [moneyType, setMoneyType] = useState('')
-  const [lockPeriod, setLockPeriod] = useState('30 days')
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedAction, setSelectedAction] = useState('')
+  const [formData, setFormData] = useState({
+    moneyType: 'USDC',
+    amount: '',
+    lockPeriod: '30 days'
+  })
 
-  const openModal = (type: string) => {
-    setModalType(type)
-    setShowModal(true)
-    setAmount('')
-    setMoneyType('')
+  const openModal = (action: string) => {
+    setSelectedAction(action)
+    setIsModalOpen(true)
+    setFormData({
+      moneyType: 'USDC',
+      amount: '',
+      lockPeriod: '30 days'
+    })
   }
 
   const closeModal = () => {
-    setShowModal(false)
-    setModalType('')
-    setAmount('')
-    setMoneyType('')
+    setIsModalOpen(false)
+    setSelectedAction('')
+    setFormData({
+      moneyType: 'USDC',
+      amount: '',
+      lockPeriod: '30 days'
+    })
   }
 
-  const handleSave = () => {
-    // Handle save logic here
-    console.log(`${modalType}:`, { amount, moneyType, lockPeriod })
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log(`${selectedAction}:`, formData)
     closeModal()
   }
   return (
@@ -48,7 +56,7 @@ export function LendingInterface() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
         {/* Save Money */}
         <div 
-          className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 cursor-pointer group"
+          className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 cursor-pointer group"
           onClick={() => openModal('Save Money')}
         >
           <div className="flex flex-col items-center text-center">
@@ -64,7 +72,7 @@ export function LendingInterface() {
 
         {/* Borrow Money */}
         <div 
-          className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 cursor-pointer group"
+          className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 cursor-pointer group"
           onClick={() => openModal('Borrow Money')}
         >
           <div className="flex flex-col items-center text-center">
@@ -80,7 +88,7 @@ export function LendingInterface() {
 
         {/* Withdraw */}
         <div 
-          className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 cursor-pointer group"
+          className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 cursor-pointer group"
           onClick={() => openModal('Withdraw')}
         >
           <div className="flex flex-col items-center text-center">
@@ -96,7 +104,7 @@ export function LendingInterface() {
 
         {/* Pay Back */}
         <div 
-          className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 cursor-pointer group"
+          className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 cursor-pointer group"
           onClick={() => openModal('Pay Back')}
         >
           <div className="flex flex-col items-center text-center">
@@ -112,7 +120,7 @@ export function LendingInterface() {
       </div>
 
       {/* Quick Actions Section */}
-      <div className="bg-white rounded-2xl shadow-lg p-6 max-w-md mx-auto">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl shadow-lg p-6 max-w-md mx-auto">
         <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">Quick Actions</h3>
         <div className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,34 +131,33 @@ export function LendingInterface() {
       </div>
 
       {/* Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-md mx-4">
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl max-w-md w-full p-6">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-bold text-gray-900">{modalType}</h2>
-              <button
+              <h2 className="text-2xl font-bold text-gray-900">{selectedAction}</h2>
+              <button 
                 onClick={closeModal}
-                className="text-gray-400 hover:text-gray-600 text-2xl"
+                className="text-gray-500 hover:text-gray-700 text-2xl"
               >
                 ×
               </button>
             </div>
 
-            <div className="space-y-4">
+            <form className="space-y-4">
               {/* Money Type */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Money Type
                 </label>
-                <select
-                  value={moneyType}
-                  onChange={(e) => setMoneyType(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50"
+                <select 
+                  value={formData.moneyType}
+                  onChange={(e) => setFormData({...formData, moneyType: e.target.value})}
+                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
                 >
-                  <option value="">Select type</option>
-                  <option value="USDC">USDC</option>
-                  <option value="ETH">ETH</option>
-                  <option value="BTC">BTC</option>
+                  <option>USDC</option>
+                  <option>DAI</option>
+                  <option>USDT</option>
                 </select>
               </div>
 
@@ -159,51 +166,51 @@ export function LendingInterface() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Amount
                 </label>
-                <input
+                <input 
                   type="number"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
+                  value={formData.amount}
+                  onChange={(e) => setFormData({...formData, amount: e.target.value})}
                   placeholder="0.00"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
 
-              {/* Lock For (only for Save Money) */}
-              {modalType === 'Save Money' && (
+              {/* Lock Period (only for Save Money) */}
+              {selectedAction === 'Save Money' && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Lock For
+                    Lock Period
                   </label>
-                  <select
-                    value={lockPeriod}
-                    onChange={(e) => setLockPeriod(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50"
+                  <select 
+                    value={formData.lockPeriod}
+                    onChange={(e) => setFormData({...formData, lockPeriod: e.target.value})}
+                    className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
                   >
-                    <option value="30 days">30 days</option>
-                    <option value="60 days">60 days</option>
-                    <option value="90 days">90 days</option>
-                    <option value="180 days">180 days</option>
-                    <option value="1 year">1 year</option>
+                    <option>30 days</option>
+                    <option>90 days</option>
+                    <option>180 days</option>
+                    <option>365 days</option>
                   </select>
                 </div>
               )}
-            </div>
 
-            {/* Buttons */}
-            <div className="flex space-x-3 mt-6">
-              <button
-                onClick={closeModal}
-                className="flex-1 px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSave}
-                className="flex-1 px-4 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium"
-              >
-                Save
-              </button>
-            </div>
+              <div className="flex space-x-3 pt-4">
+                <button 
+                  type="button"
+                  onClick={closeModal}
+                  className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors"
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit"
+                  onClick={handleSubmit}
+                  className="flex-1 py-3 px-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-medium transition-colors"
+                >
+                  Continue
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
