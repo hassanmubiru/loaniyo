@@ -160,10 +160,10 @@ export function LendingInterface() {
           <p className="text-lg sm:text-xl text-gray-600 mb-6">
             Choose an action to get started
           </p>
-          {/* <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
+          <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
             <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
             <span>Unverified</span>
-          </div> */}
+          </div>
         </div>
 
         {/* Action Cards Grid */}
@@ -229,31 +229,6 @@ export function LendingInterface() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
             <span className="font-medium">Dashboard</span>
-          </div>
-        </div>
-
-        {/* Deployment Status */}
-        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-6">
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-4">
-              <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">DeFi Platform Launching Soon!</h3>
-            <p className="text-gray-600 mb-4">
-              Our smart contracts are being deployed to the Base blockchain. You&apos;ll be able to lend, borrow, and earn yield in just a few moments.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm">
-              <div className="flex items-center justify-center sm:justify-start">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-                <span className="text-gray-600">Smart Contracts Ready</span>
-              </div>
-              <div className="flex items-center justify-center sm:justify-start">
-                <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
-                <span className="text-gray-600">Deployment in Progress</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
