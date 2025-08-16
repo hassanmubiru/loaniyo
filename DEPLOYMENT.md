@@ -35,9 +35,9 @@
 4. **SEO:** Add meta tags and structured data
 
 ### Contract Deployment:
-The app is configured to use contract at `0x5bffc4BE7d2aEc720e188c5920584101C6a1BbCC`. 
+The app is configured to use Base Sepolia testnet. 
 If you need to deploy a new contract:
-1. Deploy the LoaniyoLending.sol contract to Base mainnet
+1. Deploy the LoaniyoLending.sol contract to Base Sepolia
 2. Update the `NEXT_PUBLIC_LOANIYO_ADDRESS` environment variable in Vercel
 3. Redeploy: `vercel --prod`
 
@@ -45,8 +45,9 @@ If you need to deploy a new contract:
 
 1. **Visit:** https://loaniyo-6jugl0yzl-hassan-mubiru-s-projects.vercel.app
 2. **Connect Wallet:** Click "Connect Wallet" and select MetaMask or compatible wallet
-3. **Switch to Base:** Ensure you're on Base mainnet (network ID: 8453)
-4. **Start Lending:** Deposit USDC to earn interest or borrow against your deposits
+3. **Switch to Base Sepolia:** Ensure you're on Base Sepolia testnet (network ID: 84532)
+4. **Get Test USDC:** You'll need Base Sepolia testnet USDC for testing
+5. **Start Lending:** Deposit USDC to earn interest or borrow against your deposits
 
 ## 🔍 Vercel Dashboard
 

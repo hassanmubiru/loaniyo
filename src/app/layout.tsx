@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description: "Save, withdraw, borrow and repay loans on Base blockchain",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#16a34a',
+};
+
 export default function RootLayout({
   children,
 }: {

@@ -1,15 +1,15 @@
-import { base } from 'viem/chains'
+import { baseSepolia } from 'viem/chains'
 import { createConfig, http } from 'wagmi'
 import { injected, metaMask } from 'wagmi/connectors'
 
 const config = createConfig({
-  chains: [base],
+  chains: [baseSepolia],
   connectors: [
     injected(),
     metaMask(),
   ],
   transports: {
-    [base.id]: http('https://mainnet.base.org'),
+    [baseSepolia.id]: http('https://sepolia.base.org'),
   },
   ssr: true, // Enable SSR support
 })

@@ -59,8 +59,8 @@ export function DataHistoryChart() {
 
   if (!address) {
     return (
-      <div className="bg-white rounded-lg shadow-md p-6 text-center">
-        <p className="text-gray-500">Connect your wallet to view data history</p>
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
+        <p className="text-gray-500 text-sm sm:text-base">Connect your wallet to view data history</p>
       </div>
     )
   }

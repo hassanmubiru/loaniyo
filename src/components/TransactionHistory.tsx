@@ -57,15 +57,15 @@ export function TransactionHistory() {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold text-gray-900">Transaction History</h2>
-        <div className="flex space-x-2">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 space-y-4 sm:space-y-0">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-900">Transaction History</h2>
+        <div className="flex flex-wrap gap-2">
           {(['all', 'deposit', 'withdraw', 'borrow', 'repay'] as const).map((filterType) => (
             <button
               key={filterType}
               onClick={() => setFilter(filterType)}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                 filter === filterType
                   ? 'bg-green-600 text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'

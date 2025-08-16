@@ -44,13 +44,13 @@ export function ConnectButton() {
 
   if (isConnected) {
     return (
-      <div className="flex items-center gap-3">
-        <span className="text-sm text-gray-600 font-medium">
-          {address?.slice(0, 6)}...{address?.slice(-4)}
+      <div className="flex items-center gap-2 sm:gap-3">
+        <span className="text-xs sm:text-sm text-gray-600 font-medium">
+          {address?.slice(0, 4)}...{address?.slice(-3)}
         </span>
         <button
           onClick={() => disconnect()}
-          className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+          className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-3 sm:px-4 rounded-lg transition-colors duration-200 text-xs sm:text-sm"
         >
           Disconnect
         </button>
@@ -61,10 +61,10 @@ export function ConnectButton() {
   if (showWallets) {
     return (
       <div className="relative" ref={dropdownRef}>
-        <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-300 min-w-48 z-50">
+        <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-xl border border-gray-300 min-w-[200px] sm:min-w-48 z-50">
           <div className="p-2">
             {error && (
-              <div className="text-red-600 text-sm mb-2 px-2">
+              <div className="text-red-600 text-xs sm:text-sm mb-2 px-2">
                 {getWalletConnectErrorMessage(error)}
               </div>
             )}
@@ -76,14 +76,14 @@ export function ConnectButton() {
                   setShowWallets(false)
                 }}
                 disabled={isPending}
-                className="w-full text-left px-3 py-3 hover:bg-green-50 rounded-md transition-colors duration-200 text-sm font-medium text-gray-900 border-b border-gray-100 last:border-b-0"
+                className="w-full text-left px-3 py-3 hover:bg-green-50 rounded-md transition-colors duration-200 text-xs sm:text-sm font-medium text-gray-900 border-b border-gray-100 last:border-b-0"
               >
                 {isPending ? 'Connecting...' : `Connect ${connector.name}`}
               </button>
             ))}
             <button
               onClick={() => setShowWallets(false)}
-              className="w-full text-left px-3 py-3 hover:bg-gray-50 rounded-md transition-colors duration-200 text-sm text-gray-600 mt-1"
+              className="w-full text-left px-3 py-3 hover:bg-gray-50 rounded-md transition-colors duration-200 text-xs sm:text-sm text-gray-600 mt-1"
             >
               Cancel
             </button>
@@ -91,7 +91,7 @@ export function ConnectButton() {
         </div>
         <button
           onClick={() => setShowWallets(false)}
-          className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200"
+          className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 sm:px-6 rounded-lg transition-colors duration-200 text-xs sm:text-sm"
         >
           Connect Wallet
         </button>
@@ -102,7 +102,7 @@ export function ConnectButton() {
   return (
     <button
       onClick={() => setShowWallets(true)}
-      className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200"
+      className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 sm:px-6 rounded-lg transition-colors duration-200 text-xs sm:text-sm"
     >
       Connect Wallet
     </button>
