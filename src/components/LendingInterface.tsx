@@ -1,10 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
+import { Dashboard } from './Dashboard'
 
 export function LendingInterface() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedAction, setSelectedAction] = useState('')
+  const [showDashboard, setShowDashboard] = useState(false)
   const [formData, setFormData] = useState({
     moneyType: 'USDC',
     amount: '',
@@ -36,6 +38,32 @@ export function LendingInterface() {
     console.log(`${selectedAction}:`, formData)
     closeModal()
   }
+
+  const handleDashboardClick = () => {
+    setShowDashboard(true)
+  }
+
+  const handleBackToWelcome = () => {
+    setShowDashboard(false)
+  }
+
+  // Show Dashboard if selected
+  if (showDashboard) {
+    return (
+      <div className="space-y-4">
+        <button 
+          onClick={handleBackToWelcome}
+          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Welcome
+        </button>
+        <Dashboard />
+      </div>
+    )
+  }
   return (
     <div className="space-y-8">
       {/* Welcome Header */}
@@ -46,10 +74,10 @@ export function LendingInterface() {
         <p className="text-lg sm:text-xl text-gray-600 mb-6">
           Choose an action to get started
         </p>
-        <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
+        {/* <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
           <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
           <span>Unverified</span>
-        </div>
+        </div> */}
       </div>
 
       {/* Action Cards Grid */}
@@ -122,7 +150,10 @@ export function LendingInterface() {
       {/* Quick Actions Section */}
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl shadow-lg p-6 max-w-md mx-auto">
         <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">Quick Actions</h3>
-        <div className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer">
+        <div 
+          className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer transition-colors"
+          onClick={handleDashboardClick}
+        >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
