@@ -76,12 +76,12 @@ export function Dashboard() {
                   <input 
                     type="number" 
                     placeholder="0.00" 
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full border border-gray-300 rounded-lg p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Asset</label>
-                  <select className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white">
+                  <select className="w-full border border-gray-300 rounded-lg p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500">
                     <option>USDC</option>
                     <option>DAI</option>
                     <option>USDT</option>
@@ -180,11 +180,11 @@ export function Dashboard() {
             </div>
             <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
               <span className="text-sm font-medium text-gray-700">CUPS $1.000000</span>
-              <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">LAST 24 HRS</span>
+              <span className="text-xs text-gray-600 bg-gray-600 px-2 py-1 rounded">LAST 24 HRS</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
               <span className="text-sm font-medium text-gray-700">UNKNOWNEO 0.006312</span>
-              <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">STTH 24HR</span>
+              <span className="text-xs text-gray-600 bg-gray-600 px-2 py-1 rounded">STTH 24HR</span>
             </div>
           </div>
         </div>
