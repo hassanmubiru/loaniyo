@@ -6,7 +6,24 @@
   "devCommand": "npm run dev",
   "functions": {
     "app/api/**": {
-      "maxDuration": 30
+      "maxDuration": 60,
+      "memory": 1024
     }
+  },
+  "headers": [
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/app/api/$1" }
+  ],
+  "env": {
+    "NEXT_PUBLIC_LOANIYO_ADDRESS": "",
+    "NEXT_PUBLIC_USDC_ADDRESS": "",
+    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": ""
   }
 }
