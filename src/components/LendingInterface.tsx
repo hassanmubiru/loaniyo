@@ -184,7 +184,7 @@ export function LendingInterface() {
                 <select 
                   value={formData.moneyType}
                   onChange={(e) => setFormData({...formData, moneyType: e.target.value})}
-                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                  className="w-full border border-gray-300 rounded-xl p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
                 >
                   <option>USDC</option>
                   <option>DAI</option>
@@ -202,7 +202,7 @@ export function LendingInterface() {
                   value={formData.amount}
                   onChange={(e) => setFormData({...formData, amount: e.target.value})}
                   placeholder="0.00"
-                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-xl p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
                 />
               </div>
 
@@ -215,7 +215,7 @@ export function LendingInterface() {
                   <select 
                     value={formData.lockPeriod}
                     onChange={(e) => setFormData({...formData, lockPeriod: e.target.value})}
-                    className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white"
+                    className="w-full border border-gray-300 rounded-xl p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
                   >
                     <option>30 days</option>
                     <option>90 days</option>
