@@ -1,0 +1,25 @@
+{
+  "accountAssociation": {
+    "type": "farcaster",
+    "description": "Loaniyo DeFi Lending Platform"
+  },
+  "frame": {
+    "title": "Loaniyo - DeFi Lending",
+    "description": "Save, borrow, and earn interest with USDC on Base",
+    "image": "https://loaniyo.vercel.app/og-image.png",
+    "buttons": [
+      {
+        "label": "Save USDC",
+        "action": "post"
+      },
+      {
+        "label": "Borrow USDC", 
+        "action": "post"
+      }
+    ],
+    "postUrl": "https://loaniyo.vercel.app/api/frame"
+  },
+  "baseBuilder": {
+    "allowedAddresses": ["0x0000000000000000000000000000000000000000"]
+  }
+}

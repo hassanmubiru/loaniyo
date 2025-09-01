@@ -1,0 +1,125 @@
+{
+  "name": "Loaniyo",
+  "description": "DeFi lending platform on Base - Save, borrow, and earn interest with USDC",
+  "version": "1.0.0",
+  "author": "Loaniyo Team",
+  "homepage": "https://loaniyo.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/loaniyo"
+  },
+  "keywords": [
+    "defi",
+    "lending",
+    "borrowing",
+    "usdc",
+    "base",
+    "ethereum",
+    "yield",
+    "interest"
+  ],
+  "categories": [
+    "defi",
+    "lending",
+    "yield"
+  ],
+  "tags": [
+    "defi",
+    "lending",
+    "borrowing",
+    "usdc",
+    "base",
+    "yield",
+    "interest",
+    "collateral"
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/dashboard.png",
+      "alt": "Loaniyo Dashboard - Main lending interface"
+    },
+    {
+      "src": "/screenshots/connect.png", 
+      "alt": "Wallet connection interface"
+    },
+    {
+      "src": "/screenshots/stats.png",
+      "alt": "Platform statistics and analytics"
+    }
+  ],
+  "icon": {
+    "src": "/icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  },
+  "features": [
+    "Save USDC and earn interest",
+    "Borrow against collateral",
+    "Real-time interest calculation",
+    "Secure smart contracts",
+    "Base network integration",
+    "Mobile-optimized interface"
+  ],
+  "networks": [
+    "base",
+    "base-sepolia"
+  ],
+  "tokens": [
+    "USDC"
+  ],
+  "contracts": {
+    "mainnet": {
+      "LoaniyoLending": "0x...",
+      "USDC": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    },
+    "testnet": {
+      "LoaniyoLending": "0x...",
+      "USDC": "0x036CbD53842c5426634e7929541eC2318f3dCF7c"
+    }
+  },
+  "miniapp": {
+    "entry": "/",
+    "theme": {
+      "primary": "#10B981",
+      "secondary": "#059669",
+      "background": "#F9FAFB",
+      "surface": "#FFFFFF",
+      "text": "#111827"
+    },
+    "permissions": [
+      "wallet_connect",
+      "network_switch",
+      "contract_read",
+      "contract_write"
+    ],
+    "capabilities": [
+      "deposit",
+      "withdraw", 
+      "borrow",
+      "repay",
+      "view_balance",
+      "view_interest"
+    ]
+  },
+  "social": {
+    "twitter": "https://twitter.com/loaniyo",
+    "discord": "https://discord.gg/loaniyo",
+    "telegram": "https://t.me/loaniyo"
+  },
+  "documentation": {
+    "user_guide": "https://docs.loaniyo.com",
+    "api_reference": "https://docs.loaniyo.com/api",
+    "contracts": "https://docs.loaniyo.com/contracts"
+  },
+  "security": {
+    "audited": false,
+    "bug_bounty": "https://immunefi.com/bounty/loaniyo",
+    "disclosure": "security@loaniyo.com"
+  },
+  "stats": {
+    "total_value_locked": "$0",
+    "total_deposits": "$0",
+    "total_borrowed": "$0",
+    "active_users": 0
+  }
+}

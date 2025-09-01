@@ -4,15 +4,30 @@ import React, { useState, useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import { ConnectButton } from '@/components/ConnectButton'
 import { LendingInterface } from '@/components/LendingInterface'
+import { MiniappInterface } from '@/components/MiniappInterface'
 import { GlobalStats } from '@/components/GlobalStats'
 
 export default function Home() {
   const { isConnected } = useAccount()
   const [mounted, setMounted] = useState(false)
+  const [isMiniapp, setIsMiniapp] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    
+    // Detect if running as miniapp
+    const userAgent = navigator.userAgent.toLowerCase()
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+    const isInApp = userAgent.includes('wv') || userAgent.includes('instagram') || userAgent.includes('fbav')
+    const hasMiniappParam = new URLSearchParams(window.location.search).get('miniapp') === 'true'
+    
+    setIsMiniapp(isStandalone || isInApp || hasMiniappParam)
   }, [])
+
+  // Use miniapp interface if detected
+  if (isMiniapp) {
+    return <MiniappInterface />
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
