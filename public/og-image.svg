@@ -1,0 +1,49 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <!-- Logo and Title -->
+  <g transform="translate(100, 150)">
+    <!-- Logo -->
+    <rect x="0" y="0" width="120" height="120" rx="24" fill="white" opacity="0.9"/>
+    <rect x="16" y="16" width="88" height="88" rx="16" fill="white"/>
+    
+    <!-- Money symbols -->
+    <circle cx="40" cy="60" r="12" fill="#10B981"/>
+    <circle cx="80" cy="60" r="12" fill="#10B981"/>
+    <circle cx="60" cy="100" r="12" fill="#10B981"/>
+    
+    <!-- Dollar signs -->
+    <text x="40" y="68" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">$</text>
+    <text x="80" y="68" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">$</text>
+    <text x="60" y="108" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">$</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="250" y="200" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">Loaniyo</text>
+  <text x="250" y="250" fill="white" font-family="Arial, sans-serif" font-size="24" opacity="0.9">DeFi Lending Platform</text>
+  
+  <!-- Subtitle -->
+  <text x="250" y="300" fill="white" font-family="Arial, sans-serif" font-size="18" opacity="0.8">Save, borrow, and earn interest with USDC on Base</text>
+  
+  <!-- Features -->
+  <g transform="translate(250, 350)">
+    <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" opacity="0.9">• Save USDC and earn competitive interest rates</text>
+    <text x="0" y="30" fill="white" font-family="Arial, sans-serif" font-size="16" opacity="0.9">• Borrow against collateral (150% ratio)</text>
+    <text x="0" y="60" fill="white" font-family="Arial, sans-serif" font-size="16" opacity="0.9">• Secure smart contracts on Base blockchain</text>
+  </g>
+  
+  <!-- Base Network Badge -->
+  <g transform="translate(900, 100)">
+    <rect x="0" y="0" width="200" height="60" rx="30" fill="white" opacity="0.1"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Built on Base</text>
+  </g>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

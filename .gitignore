@@ -37,3 +37,6 @@ typechain-types/
 # IDE
 .vscode/
 .idea/
+
+# Local Netlify folder
+.netlify
