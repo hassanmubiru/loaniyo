@@ -5,7 +5,7 @@
     "signature": "your-farcaster-signature-here"
   },
   "baseBuilder": {
-    "allowedAddresses": ["0x36d0b41A89470F57c1e4A7A08e39F383AE156868"],
+    "allowedAddresses": ["hassanmubiru"],
     "miniapp": true,
     "category": "defi"
   },
