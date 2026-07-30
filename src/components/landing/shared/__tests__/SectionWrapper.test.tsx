@@ -30,8 +30,8 @@ describe('SectionWrapper', () => {
       </SectionWrapper>
     );
     const section = container.querySelector('section');
-    expect(section?.className).toContain('py-16');
-    expect(section?.className).toContain('md:py-24');
+    expect(section?.className).toContain('py-20');
+    expect(section?.className).toContain('md:py-28');
   });
 
   it('applies max-width and horizontal padding', () => {
