@@ -120,12 +120,7 @@ export function Dashboard() {
 
         {/* Rates */}
         <DashCard icon={<BarChart3 className="w-4 h-4 text-blue-400" />} title="Rates">
-          <div className="space-y-2">
-            <RateRow label="USDC" value="$0.067300" tag="LENDING" tagColor="text-primary bg-primary/10" />
-            <RateRow label="USDC" value="$0.9967344" tag="28 FT M3" />
-            <RateRow label="CUPS" value="$1.000000" tag="LAST 24 HRS" />
-            <RateRow label="UNKNOWNEO" value="$0.006312" tag="STTH 24HR" />
-          </div>
+          <p className="text-slate-500 text-sm">Connect to view live rates</p>
         </DashCard>
       </div>
 
@@ -137,11 +132,8 @@ export function Dashboard() {
             <span className="text-xs uppercase tracking-wider text-slate-400">Available Liquidity</span>
             <TrendingUp className="w-4 h-4 text-primary" />
           </div>
-          <p className="font-heading text-3xl font-bold text-primary">$9.20</p>
-          <div className="flex justify-between text-xs text-slate-500 mt-2">
-            <span>USDC</span>
-            <span>9.20</span>
-          </div>
+          <p className="font-heading text-3xl font-bold text-primary">—</p>
+          <p className="text-xs text-slate-500 mt-2">Data loaded from on-chain contract</p>
         </div>
       </div>
     </div>
