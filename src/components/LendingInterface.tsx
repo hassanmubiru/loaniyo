@@ -82,7 +82,7 @@ export function LendingInterface() {
       {/* Dashboard link */}
       <button
         onClick={() => setShowDashboard(true)}
-        className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-primary/50 dark:hover:border-primary/50 transition-all group"
+        className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] hover:border-primary/40 transition-all group"
       >
         <div className="flex items-center gap-3">
           <BarChart3 className="w-5 h-5 text-muted dark:text-slate-400 group-hover:text-primary transition-colors" />
