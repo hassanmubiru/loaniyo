@@ -43,7 +43,6 @@ export default function Home() {
 
       <main id="main-content" role="main">
         <HeroSection />
-        <StatisticsSection />
         <FeaturesGrid />
         <HowItWorksSection />
         <FAQSection />
