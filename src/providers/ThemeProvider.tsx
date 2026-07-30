@@ -65,11 +65,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     return () => mediaQuery.removeEventListener('change', handler);
   }, []);
 
-  // Apply dark class on mount (in case SSR didn't match)
-  useEffect(() => {
-    applyThemeClass(theme);
-  }, [theme]);
-
   const toggleTheme = useCallback(() => {
     setTheme((current) => {
       const next: Theme = current === 'dark' ? 'light' : 'dark';
