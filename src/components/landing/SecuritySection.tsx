@@ -84,6 +84,7 @@ export function SecuritySection() {
   return (
     <SectionWrapper id="security" className="bg-slate-900 text-white">
       <SectionHeading
+        index="05"
         eyebrow="Security"
         tone="dark"
         title="Protected at every layer"
