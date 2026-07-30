@@ -38,7 +38,7 @@ export function DashboardShowcase() {
   };
 
   return (
-    <SectionWrapper id="dashboard" className="bg-green-50/50 dark:bg-slate-900/40">
+    <SectionWrapper id="dashboard">
       <SectionHeading
         eyebrow="The dashboard"
         title="Every loan, in one clear view"
