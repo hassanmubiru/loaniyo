@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { FEATURES } from '@/lib/constants';
 import { SectionWrapper } from '@/components/landing/shared/SectionWrapper';
+import { SectionHeading } from '@/components/landing/shared/SectionHeading';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 /** Map icon string names from constants to actual Lucide components */
@@ -78,14 +79,12 @@ export function FeaturesGrid() {
 
   return (
     <SectionWrapper id="features">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-          Everything You Need
-        </h2>
-        <p className="text-muted dark:text-gray-400 max-w-2xl mx-auto text-lg">
-          Powerful features designed to make lending simple, fast, and secure.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="Features"
+        title="Everything you need to borrow with confidence"
+        description="A complete lending toolkit — from instant applications to repayment tracking — built to be simple, fast, and secure."
+        className="mb-12 md:mb-16"
+      />
 
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
@@ -103,9 +102,10 @@ export function FeaturesGrid() {
             <motion.div
               key={index}
               className={`
-                group relative rounded-xl p-6 
+                group relative rounded-2xl p-6 
                 bg-white dark:bg-slate-800 
-                border border-gray-100 dark:border-slate-700
+                border border-gray-200 dark:border-slate-700
+                hover:border-primary/40 dark:hover:border-primary/40
                 transition-colors
                 ${isFeatured ? 'sm:col-span-2' : ''}
               `}
@@ -114,8 +114,8 @@ export function FeaturesGrid() {
                 prefersReducedMotion
                   ? undefined
                   : {
-                      y: -6,
-                      boxShadow: '0 8px 30px rgba(22, 163, 74, 0.18)',
+                      y: -4,
+                      boxShadow: '0 12px 40px -12px rgba(16, 24, 40, 0.14)',
                       transition: { duration: 0.25 },
                     }
               }

@@ -2,14 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, BarChart3, Clock, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ShieldCheck, TrendingUp, Check } from 'lucide-react';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
-const floatingCards = [
-  { label: 'Approval', icon: CheckCircle, position: 'top-4 -left-8 md:-left-12', delay: 0 },
-  { label: 'Credit Score', icon: BarChart3, position: 'top-20 -right-6 md:-right-10', delay: 0.5 },
-  { label: 'Payment Reminder', icon: Clock, position: 'bottom-24 -left-6 md:-left-10', delay: 1.0 },
-  { label: 'Verified Identity', icon: ShieldCheck, position: 'bottom-8 -right-4 md:-right-8', delay: 1.5 },
+const TRUST_POINTS = [
+  '$50M+ funded',
+  '5-minute approvals',
+  'Bank-grade security',
 ];
 
 export function HeroSection() {
@@ -19,247 +18,187 @@ export function HeroSection() {
     document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: prefersReducedMotion ? 0 : 0.15,
-      },
-    },
-  };
-
-  const fadeUpVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
+  const fadeUp = {
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 16 },
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: prefersReducedMotion ? 0 : 0.6,
+        duration: prefersReducedMotion ? 0 : 0.5,
+        delay: prefersReducedMotion ? 0 : i * 0.08,
         ease: 'easeOut',
       },
-    },
+    }),
   };
-
-  const phoneVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: prefersReducedMotion ? 0 : 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  const cardVariants = (delay: number) => ({
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: prefersReducedMotion ? 0 : 0.6,
-        delay: prefersReducedMotion ? 0 : delay * 0.15 + 0.4,
-        ease: 'easeOut',
-      },
-    },
-  });
-
-  const floatingAnimation = (delay: number) =>
-    prefersReducedMotion
-      ? {}
-      : {
-          y: [0, -8, 0],
-          transition: {
-            duration: 3,
-            delay,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          },
-        };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary to-secondary"
+      className="relative overflow-hidden border-b border-gray-100 dark:border-slate-800"
     >
-      {/* Background animated blobs */}
-      {!prefersReducedMotion && (
-        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <motion.div
-            className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white/10 blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              x: [0, 30, 0],
-              y: [0, -20, 0],
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.div
-            className="absolute top-1/2 -right-24 w-80 h-80 rounded-full bg-accent/20 blur-3xl"
-            animate={{
-              scale: [1, 1.15, 1],
-              x: [0, -25, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.div
-            className="absolute -bottom-16 left-1/3 w-72 h-72 rounded-full bg-white/5 blur-3xl"
-            animate={{
-              scale: [1, 1.3, 1],
-              x: [0, 20, 0],
-              y: [0, -25, 0],
-            }}
-            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        </div>
-      )}
+      {/* Subtle, restrained backdrop — a faint radial wash, no animated blobs */}
+      <div
+        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_75%_0%,rgba(22,163,74,0.08),transparent_70%)] dark:bg-[radial-gradient(60%_50%_at_75%_0%,rgba(20,184,166,0.10),transparent_70%)]"
+        aria-hidden="true"
+      />
 
-      {/* Static blobs for reduced motion */}
-      {prefersReducedMotion && (
-        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
-          <div className="absolute top-1/2 -right-24 w-80 h-80 rounded-full bg-accent/20 blur-3xl" />
-          <div className="absolute -bottom-16 left-1/3 w-72 h-72 rounded-full bg-white/5 blur-3xl" />
-        </div>
-      )}
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
-        <motion.div
-          className="flex flex-col md:flex-row items-center gap-12 md:gap-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Left: Text content */}
-          <div className="flex-1 text-center md:text-left">
-            <motion.h1
-              variants={fadeUpVariants}
-              className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-8 items-center py-20 md:py-28">
+          {/* Left: editorial copy */}
+          <div>
+            <motion.div
+              custom={0}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="inline-flex items-center gap-2 rounded-full border border-green-200 dark:border-green-900/50 bg-green-50 dark:bg-green-900/20 px-3 py-1"
             >
-              Loans in Minutes. Not Days.
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-green-700 dark:text-green-400">
+                Digital lending, simplified
+              </span>
+            </motion.div>
+
+            <motion.h1
+              custom={1}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mt-6 font-heading font-bold tracking-tight text-gray-900 dark:text-white
+                text-[2.75rem] leading-[1.05] sm:text-6xl lg:text-[4.25rem] lg:leading-[0.98]"
+            >
+              Loans in minutes.
+              <br />
+              <span className="text-primary">Not days.</span>
             </motion.h1>
 
             <motion.p
-              variants={fadeUpVariants}
-              className="mt-6 text-lg md:text-xl text-white/80 max-w-lg mx-auto md:mx-0"
+              custom={2}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mt-6 max-w-lg text-lg leading-relaxed text-muted dark:text-slate-400"
             >
-              Get fast, transparent digital loans with competitive rates. Apply in minutes and receive funds the same day.
+              Apply, get approved, and receive funds the same day — with transparent
+              rates and no hidden fees.
             </motion.p>
 
             <motion.div
-              variants={fadeUpVariants}
-              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+              custom={3}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mt-8 flex flex-col sm:flex-row gap-3"
             >
               <a
                 href="/connect"
-                className="inline-flex items-center justify-center font-semibold px-6 py-3 rounded-lg bg-white text-primary hover:bg-white/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary"
+                className="group inline-flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-xl bg-primary text-white shadow-sm hover:bg-secondary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                Get Started
+                Get started
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
               </a>
               <button
                 onClick={handleScrollToHowItWorks}
-                className="inline-flex items-center justify-center font-semibold px-6 py-3 rounded-lg border-2 border-white/30 text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary"
+                className="inline-flex items-center justify-center font-semibold px-6 py-3.5 rounded-xl border border-gray-300 dark:border-slate-700 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                See How It Works
+                See how it works
               </button>
             </motion.div>
+
+            {/* Trust row — thin, factual, no cards */}
+            <motion.ul
+              custom={4}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2"
+            >
+              {TRUST_POINTS.map((point) => (
+                <li key={point} className="flex items-center gap-2 text-sm text-gray-600 dark:text-slate-400">
+                  <Check className="w-4 h-4 text-primary" aria-hidden="true" />
+                  {point}
+                </li>
+              ))}
+            </motion.ul>
           </div>
 
-          {/* Right: Phone mockup with floating cards */}
+          {/* Right: clean product-style card */}
           <motion.div
-            className="flex-1 relative flex justify-center"
-            variants={phoneVariants}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.6, delay: prefersReducedMotion ? 0 : 0.15, ease: 'easeOut' }}
+            className="relative"
           >
-            {/* Phone frame */}
-            <div className="relative w-64 h-[500px] md:w-72 md:h-[560px]">
-              {/* Phone body — decorative illustration (Req 18.3) */}
-              <div className="absolute inset-0 bg-gray-900 rounded-[3rem] shadow-2xl border-4 border-gray-700 overflow-hidden" aria-hidden="true">
-                {/* Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10" />
+            {/* stacked card behind for depth (solid, not glass) */}
+            <div
+              className="absolute -right-3 -top-3 hidden sm:block w-full h-full rounded-2xl border border-gray-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/40"
+              aria-hidden="true"
+            />
 
-                {/* Screen content */}
-                <div className="absolute inset-2 top-8 rounded-[2.25rem] bg-gradient-to-b from-slate-800 to-slate-900 overflow-hidden p-4 pt-8">
-                  {/* Status bar */}
-                  <div className="flex justify-between items-center text-white/60 text-xs mb-6">
-                    <span>9:41</span>
-                    <div className="flex gap-1">
-                      <div className="w-4 h-2 border border-white/60 rounded-sm">
-                        <div className="w-3/4 h-full bg-success rounded-sm" />
-                      </div>
-                    </div>
-                  </div>
+            <div className="relative rounded-2xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl shadow-green-900/5 overflow-hidden">
+              {/* card header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-slate-700">
+                <span className="text-sm font-medium text-muted dark:text-slate-400">Your loan</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-green-50 dark:bg-green-900/30 px-2.5 py-1 text-xs font-semibold text-green-700 dark:text-green-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+                  Approved
+                </span>
+              </div>
 
-                  {/* Loan balance */}
-                  <div className="text-center mb-6">
-                    <p className="text-white/60 text-xs">Available Balance</p>
-                    <p className="text-white text-2xl font-heading font-bold mt-1">$12,500.00</p>
-                  </div>
+              {/* balance */}
+              <div className="px-6 pt-6">
+                <p className="text-sm text-muted dark:text-slate-400">Approved amount</p>
+                <p className="mt-1 font-heading text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  $12,500<span className="text-muted dark:text-slate-500">.00</span>
+                </p>
+              </div>
 
-                  {/* Progress ring mock */}
-                  <div className="flex justify-center mb-6">
-                    <div className="w-24 h-24 rounded-full border-4 border-success/30 relative flex items-center justify-center">
-                      <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
-                        <circle
-                          cx="18"
-                          cy="18"
-                          r="15"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3"
-                          className="text-success"
-                          strokeDasharray="70 30"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                      <span className="text-white text-sm font-semibold">70%</span>
-                    </div>
-                  </div>
-
-                  {/* Mini cards */}
-                  <div className="space-y-2">
-                    <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/80 text-xs">Next Payment</span>
-                        <span className="text-white text-xs font-semibold">$450.00</span>
-                      </div>
-                    </div>
-                    <div className="bg-white/10 rounded-lg p-3 backdrop-blur-sm">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/80 text-xs">Approval Status</span>
-                        <span className="text-success text-xs font-semibold">Approved</span>
-                      </div>
-                    </div>
-                  </div>
+              {/* progress */}
+              <div className="px-6 pt-6">
+                <div className="flex items-center justify-between text-sm mb-2">
+                  <span className="text-muted dark:text-slate-400">Repaid</span>
+                  <span className="font-medium text-gray-900 dark:text-white">68%</span>
+                </div>
+                <div className="h-2 w-full rounded-full bg-gray-100 dark:bg-slate-700 overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full bg-primary"
+                    initial={{ width: prefersReducedMotion ? '68%' : 0 }}
+                    animate={{ width: '68%' }}
+                    transition={{ duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 0.6, ease: 'easeOut' }}
+                  />
                 </div>
               </div>
 
-              {/* Floating cards */}
-              {floatingCards.map((card, index) => {
-                const Icon = card.icon;
-                return (
-                  <motion.div
-                    key={card.label}
-                    className={`absolute ${card.position} z-20`}
-                    variants={cardVariants(index)}
-                    animate={floatingAnimation(card.delay)}
-                  >
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2 shadow-lg">
-                      <Icon className="w-4 h-4 text-white" />
-                      <span className="text-white text-xs font-medium whitespace-nowrap">
-                        {card.label}
-                      </span>
-                    </div>
-                  </motion.div>
-                );
-              })}
+              {/* stat row */}
+              <div className="grid grid-cols-3 divide-x divide-gray-100 dark:divide-slate-700 border-t border-gray-100 dark:border-slate-700 mt-6">
+                <Stat label="Rate" value="4.5%" hint="APR" />
+                <Stat label="Term" value="24" hint="months" />
+                <Stat label="Next" value="$450" hint="Jan 15" />
+              </div>
+
+              {/* footer chips */}
+              <div className="flex items-center gap-4 px-6 py-4 bg-gray-50 dark:bg-slate-800/60 border-t border-gray-100 dark:border-slate-700">
+                <span className="inline-flex items-center gap-1.5 text-xs text-gray-600 dark:text-slate-400">
+                  <ShieldCheck className="w-4 h-4 text-primary" aria-hidden="true" /> Insured
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-xs text-gray-600 dark:text-slate-400">
+                  <TrendingUp className="w-4 h-4 text-primary" aria-hidden="true" /> Building credit
+                </span>
+              </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
+  );
+}
+
+function Stat({ label, value, hint }: { label: string; value: string; hint: string }) {
+  return (
+    <div className="px-5 py-4">
+      <p className="text-xs text-muted dark:text-slate-500">{label}</p>
+      <p className="mt-1 font-heading text-lg font-bold text-gray-900 dark:text-white">{value}</p>
+      <p className="text-xs text-muted dark:text-slate-500">{hint}</p>
+    </div>
   );
 }
