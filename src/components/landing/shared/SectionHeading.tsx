@@ -3,6 +3,7 @@
 import React from 'react';
 
 interface SectionHeadingProps {
+  index?: string;
   eyebrow?: string;
   title: React.ReactNode;
   description?: string;
@@ -13,11 +14,12 @@ interface SectionHeadingProps {
 
 /**
  * Editorial section heading used across the landing page.
- * Renders a small uppercase eyebrow label, a large tight-tracking title,
- * and an optional muted description. Left-aligned by default for a
- * structured, premium-fintech feel (Mercury/Ramp/Stripe style).
+ * Renders an optional monospace section index, a small uppercase eyebrow label,
+ * a large tight-tracking title, and an optional muted description. Left-aligned
+ * by default for a structured, premium-fintech feel (Stripe / Mercury / Ramp).
  */
 export function SectionHeading({
+  index,
   eyebrow,
   title,
   description,
@@ -29,30 +31,40 @@ export function SectionHeading({
   const isDark = tone === 'dark';
 
   return (
-    <div
-      className={`max-w-2xl ${isCenter ? 'mx-auto text-center' : ''} ${className}`}
-    >
-      {eyebrow && (
+    <div className={`max-w-3xl ${isCenter ? 'mx-auto text-center' : ''} ${className}`}>
+      {(index || eyebrow) && (
         <div
-          className={`flex items-center gap-2 mb-4 ${isCenter ? 'justify-center' : ''}`}
+          className={`flex items-center gap-3 mb-6 ${isCenter ? 'justify-center' : ''}`}
         >
-          <span className="h-px w-6 bg-primary" aria-hidden="true" />
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-            {eyebrow}
-          </span>
+          {index && (
+            <span className="font-mono text-sm tabular-nums text-primary">
+              {index}
+            </span>
+          )}
+          <span
+            className={`h-px w-8 ${isDark ? 'bg-white/20' : 'bg-gray-300 dark:bg-slate-700'}`}
+            aria-hidden="true"
+          />
+          {eyebrow && (
+            <span
+              className={`text-xs font-semibold uppercase tracking-[0.2em] ${isDark ? 'text-slate-400' : 'text-gray-500 dark:text-slate-400'}`}
+            >
+              {eyebrow}
+            </span>
+          )}
         </div>
       )}
       <h2
-        className={`font-heading font-bold tracking-tight text-balance
-          text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]
+        className={`font-heading font-bold tracking-tight
+          text-[2.25rem] leading-[1.05] sm:text-5xl lg:text-[3.5rem] lg:leading-[1.02]
           ${isDark ? 'text-white' : 'text-gray-900 dark:text-white'}`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-base md:text-lg leading-relaxed
-            ${isDark ? 'text-slate-300' : 'text-muted dark:text-slate-400'}`}
+          className={`mt-5 text-lg leading-relaxed max-w-2xl ${isCenter ? 'mx-auto' : ''}
+            ${isDark ? 'text-slate-400' : 'text-muted dark:text-slate-400'}`}
         >
           {description}
         </p>
