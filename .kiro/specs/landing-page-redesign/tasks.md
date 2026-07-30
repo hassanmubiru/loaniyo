@@ -133,7 +133,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
 - [ ] 7. Implement Security, Testimonials, and FAQ sections
-  - [-] 7.1 Implement SecuritySection component
+  - [x] 7.1 Implement SecuritySection component
     - Create `src/components/landing/SecuritySection.tsx` as Client Component
     - Render 7 security measure cards with Lucide icons, titles, short descriptions (15-80 chars)
     - Expand on hover to reveal additional text (40-200 chars) with Framer Motion scale+fade
@@ -142,7 +142,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Use dark background variant for visual differentiation (Req 10.5)
     - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5_
 
-  - [-] 7.2 Implement TestimonialsSection component
+  - [x] 7.2 Implement TestimonialsSection component
     - Create `src/components/landing/TestimonialsSection.tsx` as Client Component
     - Render testimonial cards: avatar, name, occupation, star rating (1-5), review text
     - Include 4+ testimonial entries from constants
@@ -151,7 +151,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Loop continuously (last → first)
     - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6_
 
-  - [-] 7.3 Implement FAQSection component
+  - [x] 7.3 Implement FAQSection component
     - Create `src/components/landing/FAQSection.tsx` as Client Component
     - Render accordion with 5+ questions from constants, all collapsed initially
     - Implement exclusive-open: expand one collapses any other (Req 12.5)
@@ -160,7 +160,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.6_
 
 - [ ] 8. Implement CTA and Footer sections
-  - [~] 8.1 Implement CTASection component
+  - [-] 8.1 Implement CTASection component
     - Create `src/components/landing/CTASection.tsx` as Client Component
     - Render headline "Ready to access smarter loans?", subheadline (≤120 chars)
     - Render "Apply Now" (primary) and "Contact Sales" (secondary) buttons
@@ -168,7 +168,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Animate fade-up on first viewport entry (≤600ms)
     - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5_
 
-  - [~] 8.2 Implement FooterSection component
+  - [ ] 8.2 Implement FooterSection component
     - Create `src/components/landing/FooterSection.tsx` as Client Component
     - Render Loaniyo logo + tagline (≤120 chars)
     - Render link groups: Company (About, Blog, Careers), Support (Help Center, Privacy Policy, Terms, Contact), 3+ social media icons
