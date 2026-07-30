@@ -16,7 +16,9 @@
   "dependencies": {
     "@tanstack/react-query": "^5.51.1",
     "create-onchain": "^0.0.24",
+    "framer-motion": "11.15.0",
     "glob": "^11.0.3",
+    "lucide-react": "0.468.0",
     "next": "^14.2.31",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
