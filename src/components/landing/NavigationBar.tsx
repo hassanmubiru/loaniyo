@@ -113,7 +113,7 @@ export function NavigationBar() {
               Sign In
             </a>
             <a
-              href="/get-started"
+              href="/connect"
               className="text-sm font-semibold bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               Get Started
@@ -191,7 +191,7 @@ export function NavigationBar() {
                 Sign In
               </a>
               <a
-                href="/get-started"
+                href="/connect"
                 className="w-full text-center text-base font-semibold bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Get Started
