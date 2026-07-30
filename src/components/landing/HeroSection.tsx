@@ -6,9 +6,9 @@ import { ArrowRight, ShieldCheck, TrendingUp, Check } from 'lucide-react';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 const TRUST_POINTS = [
-  '$50M+ funded',
-  '5-minute approvals',
-  'Bank-grade security',
+  'Built on Base blockchain',
+  'Non-custodial & transparent',
+  'No hidden fees',
 ];
 
 export function HeroSection() {
