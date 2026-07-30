@@ -11,9 +11,9 @@ module.exports = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        primary: '#2563EB',
-        secondary: '#4F46E5',
-        accent: '#06B6D4',
+        primary: '#16a34a',
+        secondary: '#047857',
+        accent: '#14b8a6',
         success: '#10B981',
         warning: '#F59E0B',
         text: '#111827',

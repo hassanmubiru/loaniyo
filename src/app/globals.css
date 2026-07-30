@@ -85,11 +85,11 @@ body {
 
 /* Loan Calculator slider custom properties */
 :root {
-  --slider-fill: #2563EB;
+  --slider-fill: #16a34a;
   --slider-track: #e5e7eb;
 }
 
 .dark {
-  --slider-fill: #06B6D4;
+  --slider-fill: #14b8a6;
   --slider-track: #374151;
 }

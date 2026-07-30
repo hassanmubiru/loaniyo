@@ -100,7 +100,7 @@ export function FeaturesGrid() {
                   ? undefined
                   : {
                       y: -6,
-                      boxShadow: '0 8px 30px rgba(37, 99, 235, 0.15)',
+                      boxShadow: '0 8px 30px rgba(22, 163, 74, 0.18)',
                       transition: { duration: 0.25 },
                     }
               }
@@ -109,7 +109,7 @@ export function FeaturesGrid() {
               <div
                 className={`
                   inline-flex items-center justify-center rounded-lg mb-4
-                  bg-blue-50 dark:bg-blue-900/20
+                  bg-green-50 dark:bg-green-900/20
                   ${isFeatured ? 'w-12 h-12' : 'w-10 h-10'}
                 `}
               >

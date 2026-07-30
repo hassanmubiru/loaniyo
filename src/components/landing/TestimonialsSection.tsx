@@ -121,7 +121,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <SectionWrapper id="testimonials">
+    <SectionWrapper id="testimonials" className="bg-green-50/50 dark:bg-slate-900/40">
       <ScrollReveal>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
@@ -137,7 +137,7 @@ export function TestimonialsSection() {
           <button
             onClick={goToPrevious}
             aria-label="Previous testimonial"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-gray-200" />
           </button>
@@ -207,7 +207,7 @@ export function TestimonialsSection() {
           <button
             onClick={goToNext}
             aria-label="Next testimonial"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-700 dark:text-gray-200" />
           </button>
@@ -226,9 +226,9 @@ export function TestimonialsSection() {
               aria-selected={index === currentIndex}
               aria-label={`Go to testimonial ${index + 1} of ${totalTestimonials}`}
               onClick={() => goToIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 ${
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900 ${
                 index === currentIndex
-                  ? 'bg-blue-600 dark:bg-blue-400 w-8'
+                  ? 'bg-primary dark:bg-green-400 w-8'
                   : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
               }`}
             />

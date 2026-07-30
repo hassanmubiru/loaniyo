@@ -63,7 +63,7 @@ const FooterSection = dynamic(
  */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-bg text-text dark:text-dark-text">
+    <div className="min-h-screen bg-gradient-to-b from-green-50/60 via-white to-emerald-50/40 dark:from-dark-bg dark:via-dark-bg dark:to-slate-900 text-text dark:text-dark-text">
       {/* Skip navigation link — first focusable element (Req 18.1) */}
       <a
         href="#main-content"

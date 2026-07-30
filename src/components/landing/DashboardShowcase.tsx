@@ -37,7 +37,7 @@ export function DashboardShowcase() {
   };
 
   return (
-    <SectionWrapper id="dashboard">
+    <SectionWrapper id="dashboard" className="bg-green-50/50 dark:bg-slate-900/40">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
           Your Dashboard, At a Glance
@@ -49,7 +49,7 @@ export function DashboardShowcase() {
 
       {/* Dashboard container — ≥80% width on desktop */}
       <motion.div
-        className="w-full lg:w-[85%] mx-auto rounded-2xl bg-gray-50 dark:bg-slate-900 p-4 sm:p-6 lg:p-8"
+        className="w-full lg:w-[85%] mx-auto rounded-2xl bg-white dark:bg-slate-900 shadow-xl shadow-green-900/5 p-4 sm:p-6 lg:p-8"
         variants={prefersReducedMotion ? undefined : containerVariants}
         initial={prefersReducedMotion ? undefined : 'hidden'}
         whileInView={prefersReducedMotion ? undefined : 'visible'}

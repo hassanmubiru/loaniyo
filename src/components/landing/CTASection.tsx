@@ -21,7 +21,7 @@ export function CTASection() {
   };
 
   return (
-    <SectionWrapper id="cta" className="bg-gradient-to-br from-[#2563EB] to-[#4F46E5]">
+    <SectionWrapper id="cta" className="bg-gradient-to-br from-primary to-secondary">
       <motion.div
         className="flex flex-col items-center text-center"
         variants={fadeUpVariants}

@@ -88,7 +88,7 @@ function Slider({ label, value, min, max, step, onChange, formatValue, id }: Sli
           [&::-moz-range-thumb]:cursor-pointer
           [&::-moz-range-thumb]:border-0"
         style={{
-          background: `linear-gradient(to right, var(--slider-fill, #2563EB) ${percentage}%, var(--slider-track, #e5e7eb) ${percentage}%)`,
+          background: `linear-gradient(to right, var(--slider-fill, #16a34a) ${percentage}%, var(--slider-track, #e5e7eb) ${percentage}%)`,
         }}
         aria-valuemin={min}
         aria-valuemax={max}
@@ -167,7 +167,7 @@ export function LoanCalculator() {
   );
 
   return (
-    <SectionWrapper id="calculator">
+    <SectionWrapper id="calculator" className="bg-green-50/50 dark:bg-slate-900/40">
       <ScrollReveal>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-dark-text mb-4">

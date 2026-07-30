@@ -13,7 +13,7 @@ import { ScrollReveal } from '@/components/landing/shared/ScrollReveal';
  */
 export function StatisticsSection() {
   return (
-    <SectionWrapper id="statistics">
+    <SectionWrapper id="statistics" className="bg-green-50/50 dark:bg-slate-900/40">
       <ScrollReveal threshold={0.2}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {STATISTICS.map((stat, index) => (
