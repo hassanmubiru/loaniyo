@@ -27,6 +27,7 @@ export function FAQSection() {
   return (
     <SectionWrapper id="faq">
       <SectionHeading
+        index="07"
         eyebrow="FAQ"
         title="Questions, answered"
         description="Everything you need to know before you apply. Can't find it here? Reach out to our team."

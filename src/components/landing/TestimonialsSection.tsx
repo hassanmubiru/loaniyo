@@ -125,6 +125,7 @@ export function TestimonialsSection() {
     <SectionWrapper id="testimonials" className="border-y border-black/5 dark:border-white/5">
       <ScrollReveal>
         <SectionHeading
+          index="06"
           eyebrow="Testimonials"
           title="Trusted by people who needed it fast"
           description="Real borrowers who got funded when it mattered — from business owners to freelancers."
