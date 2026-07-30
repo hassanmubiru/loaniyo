@@ -44,11 +44,11 @@ export function GlobalStats() {
 
   if (isLoading) {
     return (
-      <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700 divide-x divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 bg-white dark:bg-slate-800/50">
+      <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-white/[0.08] divide-x divide-y lg:divide-y-0 divide-white/[0.08] bg-white/[0.02]">
         {[...Array(4)].map((_, i) => (
           <div key={i} className="p-5 sm:p-6 animate-pulse">
-            <div className="h-3 bg-gray-200 dark:bg-slate-700 rounded w-20 mb-3" />
-            <div className="h-7 bg-gray-200 dark:bg-slate-700 rounded w-24" />
+            <div className="h-3 bg-white/10 rounded w-20 mb-3" />
+            <div className="h-7 bg-white/10 rounded w-24" />
           </div>
         ))}
       </div>
