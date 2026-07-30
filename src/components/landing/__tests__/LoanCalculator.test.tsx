@@ -46,9 +46,11 @@ describe('LoanCalculator', () => {
     expect(section).toBeInTheDocument();
   });
 
-  it('renders the heading "Loan Calculator"', () => {
+  it('renders the calculator section heading', () => {
     render(<LoanCalculator />);
-    expect(screen.getByText('Loan Calculator')).toBeInTheDocument();
+    expect(
+      screen.getByText('Know your payment before you apply')
+    ).toBeInTheDocument();
   });
 
   it('renders all three slider controls with labels', () => {
