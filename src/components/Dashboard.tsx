@@ -1,216 +1,170 @@
 'use client'
 
 import React, { useState } from 'react'
+import { TrendingUp, ArrowDown, Shield, BarChart3, Clock, Clipboard } from 'lucide-react'
 
 export function Dashboard() {
-  const [activeTab, setActiveTab] = useState('withdraw')
+  const [activeTab, setActiveTab] = useState<'withdraw' | 'history'>('withdraw')
 
   return (
-    <div className="max-w-6xl mx-auto p-4 space-y-6">
+    <div className="max-w-6xl mx-auto space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-green-600 rounded-sm flex items-center justify-center">
-            <span className="text-white text-xs font-bold">📊</span>
-          </div>
-          <h1 className="text-xl font-semibold text-gray-800">Dashboard</h1>
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+          <BarChart3 className="w-4 h-4 text-white" />
         </div>
+        <h1 className="font-heading text-xl font-bold text-white">Dashboard</h1>
       </div>
 
-      {/* Financial Summary Card */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-gray-800">Financial Summary</h2>
-          <div className="w-6 h-6 text-gray-400">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-          </div>
+      {/* Financial Summary */}
+      <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6">
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="font-heading text-base font-semibold text-white">Financial Summary</h2>
+          <TrendingUp className="w-5 h-5 text-slate-500" />
         </div>
-        
-        <div className="grid grid-cols-2 gap-8 mb-6">
-          <div className="text-center">
-            <div className="text-sm text-gray-600 mb-1">Savings</div>
-            <div className="text-2xl font-bold text-green-600">$0.00</div>
+
+        <div className="grid grid-cols-2 gap-6 mb-6">
+          <div>
+            <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Savings</p>
+            <p className="font-heading text-2xl font-bold text-primary">$0.00</p>
           </div>
-          <div className="text-center">
-            <div className="text-sm text-gray-600 mb-1">Loans</div>
-            <div className="text-2xl font-bold text-red-600">$0.00</div>
+          <div>
+            <p className="text-xs uppercase tracking-wider text-slate-500 mb-1">Loans</p>
+            <p className="font-heading text-2xl font-bold text-red-400">$0.00</p>
           </div>
         </div>
 
-        <div className="flex gap-4 mb-4">
-          <button 
+        {/* Tabs */}
+        <div className="flex gap-2 mb-4">
+          <button
             onClick={() => setActiveTab('withdraw')}
-            className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${
-              activeTab === 'withdraw' 
-                ? 'bg-green-600 text-white' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors ${
+              activeTab === 'withdraw'
+                ? 'bg-primary text-white'
+                : 'bg-white/[0.05] text-slate-400 hover:text-white hover:bg-white/[0.08]'
             }`}
           >
             Withdraw
           </button>
-          <button 
+          <button
             onClick={() => setActiveTab('history')}
-            className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
-              activeTab === 'history' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
+              activeTab === 'history'
+                ? 'bg-blue-600 text-white'
+                : 'bg-white/[0.05] text-slate-400 hover:text-white hover:bg-white/[0.08]'
             }`}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <Clock className="w-4 h-4" />
             History
           </button>
         </div>
 
         {/* Tab Content */}
-        <div className="min-h-[200px] bg-gray-50 rounded-lg p-4">
+        <div className="min-h-[200px] rounded-xl bg-white/[0.03] border border-white/[0.06] p-5">
           {activeTab === 'withdraw' && (
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-800">Withdraw Funds</h4>
+              <h4 className="font-medium text-white text-sm">Withdraw Funds</h4>
               <div className="space-y-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Amount</label>
-                  <input 
-                    type="number" 
-                    placeholder="0.00" 
-                    className="w-full border border-gray-300 rounded-lg p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500"
+                  <label className="block text-xs font-medium text-slate-400 mb-1.5">Amount</label>
+                  <input
+                    type="number"
+                    placeholder="0.00"
+                    className="w-full border border-white/[0.1] rounded-lg px-4 py-3 bg-white/[0.03] text-white placeholder-slate-600 text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Asset</label>
-                  <select className="w-full border border-gray-300 rounded-lg p-3 bg-white text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500">
+                  <label className="block text-xs font-medium text-slate-400 mb-1.5">Asset</label>
+                  <select className="w-full border border-white/[0.1] rounded-lg px-4 py-3 bg-white/[0.03] text-white text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-colors">
                     <option>USDC</option>
                     <option>DAI</option>
                     <option>USDT</option>
                   </select>
                 </div>
-                <button className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                <button className="w-full bg-primary hover:bg-secondary text-white py-3 px-4 rounded-lg font-medium text-sm transition-colors">
                   Withdraw
                 </button>
               </div>
             </div>
           )}
-          
+
           {activeTab === 'history' && (
             <div className="space-y-4">
-              <h4 className="font-semibold text-gray-800">Transaction History</h4>
-              <div className="space-y-3">
-                <div className="text-center py-8 text-gray-500">
-                  <svg className="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                  <p>No transactions yet</p>
-                  <p className="text-sm">Your transaction history will appear here</p>
-                </div>
+              <h4 className="font-medium text-white text-sm">Transaction History</h4>
+              <div className="text-center py-8">
+                <Clipboard className="w-10 h-10 mx-auto mb-3 text-slate-600" />
+                <p className="text-slate-400 text-sm">No transactions yet</p>
+                <p className="text-slate-600 text-xs mt-1">Your transaction history will appear here</p>
               </div>
             </div>
           )}
         </div>
       </div>
 
-      {/* Grid Layout for Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        
-        {/* Savings Card */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-4 h-4 text-green-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Savings</h3>
-          </div>
-          <div className="text-center py-8">
-            <div className="text-gray-400 mb-2">No earnings yet</div>
-          </div>
-        </div>
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Savings */}
+        <DashCard icon={<TrendingUp className="w-4 h-4 text-primary" />} title="Savings">
+          <p className="text-slate-500 text-sm">No earnings yet</p>
+        </DashCard>
 
-        {/* Loans Card */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-4 h-4 text-red-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Loans</h3>
-          </div>
-          <div className="text-center py-8">
-            <div className="text-gray-400 mb-2">No active loans</div>
-          </div>
-        </div>
+        {/* Loans */}
+        <DashCard icon={<ArrowDown className="w-4 h-4 text-red-400" />} title="Loans">
+          <p className="text-slate-500 text-sm">No active loans</p>
+        </DashCard>
 
-        {/* Collateral Card */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-4 h-4 text-purple-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Collateral</h3>
-          </div>
-          <div className="text-center py-8">
-            <div className="text-gray-400 mb-2">No collateral</div>
-          </div>
-        </div>
+        {/* Collateral */}
+        <DashCard icon={<Shield className="w-4 h-4 text-purple-400" />} title="Collateral">
+          <p className="text-slate-500 text-sm">No collateral</p>
+        </DashCard>
 
-        {/* Rates Card */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-4 h-4 text-blue-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">Rates</h3>
+        {/* Rates */}
+        <DashCard icon={<BarChart3 className="w-4 h-4 text-blue-400" />} title="Rates">
+          <div className="space-y-2">
+            <RateRow label="USDC" value="$0.067300" tag="LENDING" tagColor="text-primary bg-primary/10" />
+            <RateRow label="USDC" value="$0.9967344" tag="28 FT M3" />
+            <RateRow label="CUPS" value="$1.000000" tag="LAST 24 HRS" />
+            <RateRow label="UNKNOWNEO" value="$0.006312" tag="STTH 24HR" />
           </div>
-          <div className="space-y-3">
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-              <span className="text-sm font-medium text-gray-700">USDC$ 0.067300</span>
-              <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded">LENDING</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-              <span className="text-sm font-medium text-gray-700">USDC $0 9967344</span>
-              <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded">28 FT M3</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-              <span className="text-sm font-medium text-gray-700">CUPS $1.000000</span>
-              <span className="text-xs text-gray-600 bg-gray-600 px-2 py-1 rounded">LAST 24 HRS</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-              <span className="text-sm font-medium text-gray-700">UNKNOWNEO 0.006312</span>
-              <span className="text-xs text-gray-600 bg-gray-600 px-2 py-1 rounded">STTH 24HR</span>
-            </div>
+        </DashCard>
+      </div>
+
+      {/* TVL */}
+      <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6">
+        <h3 className="font-heading text-base font-semibold text-white mb-4">Total Value Locked</h3>
+        <div className="rounded-lg bg-primary/10 border border-primary/20 p-6">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs uppercase tracking-wider text-slate-400">Available Liquidity</span>
+            <TrendingUp className="w-4 h-4 text-primary" />
+          </div>
+          <p className="font-heading text-3xl font-bold text-primary">$9.20</p>
+          <div className="flex justify-between text-xs text-slate-500 mt-2">
+            <span>USDC</span>
+            <span>9.20</span>
           </div>
         </div>
       </div>
+    </div>
+  )
+}
 
-      {/* Total Value Locked Card */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">Total Value Locked</h3>
-        <div className="bg-green-50 rounded-lg p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="text-sm text-gray-600">Available Liquidity</div>
-            <div className="w-6 h-6 text-green-600">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-600 mb-2">$9.20</div>
-            <div className="flex justify-between text-sm text-gray-600">
-              <span>USDC</span>
-              <span>9.20</span>
-            </div>
-          </div>
-        </div>
+function DashCard({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) {
+  return (
+    <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5">
+      <div className="flex items-center gap-2 mb-4">
+        {icon}
+        <h3 className="text-sm font-semibold text-white">{title}</h3>
       </div>
+      {children}
+    </div>
+  )
+}
+
+function RateRow({ label, value, tag, tagColor = 'text-slate-400 bg-white/[0.05]' }: { label: string; value: string; tag: string; tagColor?: string }) {
+  return (
+    <div className="flex items-center justify-between p-2.5 rounded-lg bg-white/[0.03]">
+      <span className="text-sm text-slate-300">{label} <span className="text-slate-500">{value}</span></span>
+      <span className={`text-[10px] font-medium px-2 py-0.5 rounded ${tagColor}`}>{tag}</span>
     </div>
   )
 }
