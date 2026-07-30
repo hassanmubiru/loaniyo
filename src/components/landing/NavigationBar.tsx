@@ -121,7 +121,7 @@ export function NavigationBar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(true)}
