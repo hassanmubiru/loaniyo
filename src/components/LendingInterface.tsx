@@ -68,10 +68,10 @@ export function LendingInterface() {
               <div className={`w-10 h-10 rounded-lg ${action.bg} flex items-center justify-center mb-4`}>
                 <Icon className="w-5 h-5 text-white" />
               </div>
-              <h3 className="font-heading text-base font-semibold text-gray-900 dark:text-white">
+              <h3 className="font-heading text-base font-semibold text-white">
                 {action.label}
               </h3>
-              <p className="text-xs text-muted dark:text-slate-500 mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 {action.description}
               </p>
             </button>
