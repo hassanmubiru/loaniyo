@@ -107,7 +107,7 @@ export function NavigationBar() {
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <a
-              href="/signin"
+              href="/connect"
               className="text-sm font-medium text-muted hover:text-text dark:text-gray-300 dark:hover:text-dark-text transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg px-3 py-2"
             >
               Sign In
@@ -185,7 +185,7 @@ export function NavigationBar() {
             {/* Mobile Menu Actions */}
             <div className="flex flex-col items-center gap-4 mt-8 w-full max-w-xs">
               <a
-                href="/signin"
+                href="/connect"
                 className="text-base font-medium text-muted hover:text-text dark:text-gray-300 dark:hover:text-dark-text transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg px-4 py-2"
               >
                 Sign In
