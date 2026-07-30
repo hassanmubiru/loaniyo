@@ -67,6 +67,19 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Subtle grid texture for section backdrops (adds depth) */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(2, 6, 23, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(2, 6, 23, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
 }
 
 .gradient-bg {

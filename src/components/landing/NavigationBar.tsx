@@ -138,7 +138,7 @@ export function NavigationBar() {
       {/* Mobile Full-Screen Overlay Menu */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-50 bg-white dark:bg-dark-bg flex flex-col md:hidden"
+          className="fixed inset-0 z-50 bg-white dark:bg-dark-bg flex flex-col lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
