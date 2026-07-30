@@ -16,9 +16,9 @@ export function TrustedBySection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <SectionWrapper id="trusted-by" className="overflow-hidden">
-      <div className="text-center mb-8">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+    <SectionWrapper id="trusted-by" className="overflow-hidden border-b border-black/5 dark:border-white/5" compact>
+      <div className="text-center mb-6">
+        <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 dark:text-slate-500">
           Trusted By
         </h2>
       </div>

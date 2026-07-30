@@ -36,9 +36,9 @@ export function HeroSection() {
       id="hero"
       className="relative overflow-hidden border-b border-gray-100 dark:border-slate-800"
     >
-      {/* Subtle, restrained backdrop — a faint radial wash, no animated blobs */}
+      {/* Subtle, restrained backdrop — faint radial wash + grid texture for depth */}
       <div
-        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_75%_0%,rgba(22,163,74,0.08),transparent_70%)] dark:bg-[radial-gradient(60%_50%_at_75%_0%,rgba(20,184,166,0.10),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-grid bg-[radial-gradient(60%_50%_at_75%_0%,rgba(22,163,74,0.08),transparent_70%)] dark:bg-[radial-gradient(60%_50%_at_75%_0%,rgba(20,184,166,0.10),transparent_70%)]"
         aria-hidden="true"
       />
 
