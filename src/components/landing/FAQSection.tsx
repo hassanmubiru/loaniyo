@@ -26,16 +26,14 @@ export function FAQSection() {
 
   return (
     <SectionWrapper id="faq">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-muted dark:text-slate-400 max-w-2xl mx-auto text-lg">
-          Find answers to common questions about our lending platform.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Questions, answered"
+        description="Everything you need to know before you apply. Can't find it here? Reach out to our team."
+        className="mb-12 md:mb-16"
+      />
 
-      <div className="max-w-3xl mx-auto space-y-4">
+      <div className="max-w-3xl space-y-3">
         {FAQ_ITEMS.map((item, index) => {
           const isOpen = openIndex === index;
           const buttonId = `faq-button-${index}`;
