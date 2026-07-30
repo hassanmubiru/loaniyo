@@ -85,10 +85,10 @@ export function LendingInterface() {
         className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] hover:border-primary/40 transition-all group"
       >
         <div className="flex items-center gap-3">
-          <BarChart3 className="w-5 h-5 text-muted dark:text-slate-400 group-hover:text-primary transition-colors" />
-          <span className="text-sm font-medium text-gray-900 dark:text-white">View Dashboard</span>
+          <BarChart3 className="w-5 h-5 text-slate-400 group-hover:text-primary transition-colors" />
+          <span className="text-sm font-medium text-white">View Dashboard</span>
         </div>
-        <svg className="w-4 h-4 text-muted dark:text-slate-500 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-slate-500 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
