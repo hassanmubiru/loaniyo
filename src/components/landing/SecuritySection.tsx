@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { SECURITY_FEATURES } from '@/lib/constants';
 import { SectionWrapper } from '@/components/landing/shared/SectionWrapper';
+import { SectionHeading } from '@/components/landing/shared/SectionHeading';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 /** Map icon string names from constants to actual Lucide components */

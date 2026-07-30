@@ -40,14 +40,12 @@ export function HowItWorksSection() {
   return (
     <SectionWrapper id="how-it-works">
       {/* Section heading */}
-      <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-          How It Works
-        </h2>
-        <p className="text-muted dark:text-gray-400 max-w-2xl mx-auto text-lg">
-          Get started with Loaniyo in seven simple steps.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="How it works"
+        title="From application to funded in seven steps"
+        description="A guided path with no paperwork runarounds — most applicants are approved in minutes."
+        className="mb-12 md:mb-16"
+      />
 
       {/* Vertical timeline */}
       <motion.ol
