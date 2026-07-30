@@ -39,14 +39,12 @@ export function DashboardShowcase() {
 
   return (
     <SectionWrapper id="dashboard" className="bg-green-50/50 dark:bg-slate-900/40">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-          Your Dashboard, At a Glance
-        </h2>
-        <p className="text-muted dark:text-gray-400 max-w-2xl mx-auto text-lg">
-          Manage loans, track payments, and monitor progress — all in one place.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="The dashboard"
+        title="Every loan, in one clear view"
+        description="Track balances, upcoming payments, and repayment progress from a single dashboard built for clarity."
+        className="mb-12 md:mb-16"
+      />
 
       {/* Dashboard container — ≥80% width on desktop */}
       <motion.div
