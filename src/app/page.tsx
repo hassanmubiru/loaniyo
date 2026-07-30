@@ -3,10 +3,6 @@ import { NavigationBar } from '@/components/landing/NavigationBar';
 import { HeroSection } from '@/components/landing/HeroSection';
 
 // Code-split below-the-fold sections
-const StatisticsSection = dynamic(
-  () => import('@/components/landing/StatisticsSection').then((mod) => ({ default: mod.StatisticsSection })),
-  { ssr: true }
-);
 const FeaturesGrid = dynamic(
   () => import('@/components/landing/FeaturesGrid').then((mod) => ({ default: mod.FeaturesGrid })),
   { ssr: true }
