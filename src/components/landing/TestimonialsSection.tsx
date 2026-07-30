@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { TESTIMONIALS } from '@/lib/constants';
 import { SectionWrapper } from '@/components/landing/shared/SectionWrapper';
+import { SectionHeading } from '@/components/landing/shared/SectionHeading';
 import { ScrollReveal } from '@/components/landing/shared/ScrollReveal';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
