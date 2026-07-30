@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { STEPS } from '@/lib/constants';
 import { SectionWrapper } from '@/components/landing/shared/SectionWrapper';
+import { SectionHeading } from '@/components/landing/shared/SectionHeading';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 /**
