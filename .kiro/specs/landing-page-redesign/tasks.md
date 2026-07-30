@@ -71,8 +71,8 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Add background gradient (#2563EB → #4F46E5) with animated blob shapes (≥6s cycle)
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7_
 
-- [ ] 4. Implement social proof and metrics sections
-  - [-] 4.1 Implement TrustedBySection component
+- [x] 4. Implement social proof and metrics sections
+  - [x] 4.1 Implement TrustedBySection component
     - Create `src/components/landing/TrustedBySection.tsx` as Client Component
     - Render "Trusted By" heading and 6+ grayscale logos (min 32px height)
     - Implement CSS marquee animation (right-to-left, ≤30s cycle, seamless loop via duplicated logo strip)
@@ -80,7 +80,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Disable marquee for `prefers-reduced-motion` — show static layout (Req 3.4)
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-  - [-] 4.2 Implement StatisticsSection component
+  - [x] 4.2 Implement StatisticsSection component
     - Create `src/components/landing/StatisticsSection.tsx` as Client Component
     - Render 4 metric cards: "99.9% Platform Uptime", "5 min Average Application Time", "Bank-grade Security", "24/7 Availability"
     - Use AnimatedCounter for numeric values (99.9, 5) — triggered once at 50% viewport intersection
@@ -89,7 +89,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
 - [ ] 5. Implement Features Grid and Loan Calculator
-  - [-] 5.1 Implement FeaturesGrid component
+  - [x] 5.1 Implement FeaturesGrid component
     - Create `src/components/landing/FeaturesGrid.tsx` as Client Component
     - Render 10 feature cards with Lucide icons, titles (≤30 chars), descriptions (≤80 chars)
     - Implement 2 card size variants (standard + featured) with no more than 4 consecutive same-size cards
