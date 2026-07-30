@@ -1,25 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { FAQ_ITEMS } from "@/lib/constants";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Loaniyo - Fast Digital Loans & Lending Platform",
@@ -83,10 +68,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
       <head>
+        {/* Fonts loaded via link (non-blocking, degrades to system fonts if
+            the network is unavailable) instead of next/font's build-time fetch */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
