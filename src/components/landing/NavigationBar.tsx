@@ -90,13 +90,13 @@ export function NavigationBar() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-muted hover:text-text dark:text-gray-300 dark:hover:text-dark-text transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg px-2 py-1"
+                className="whitespace-nowrap text-sm font-medium text-muted hover:text-text dark:text-slate-300 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/[0.06] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg px-3 py-2"
               >
                 {link.label}
               </a>
@@ -104,7 +104,7 @@ export function NavigationBar() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
             <a
               href="/signin"
