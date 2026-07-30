@@ -16,14 +16,14 @@ interface StatItemProps {
 function StatItem({ label, value, accent, sub }: StatItemProps) {
   return (
     <div className="p-5 sm:p-6">
-      <p className="text-xs font-medium uppercase tracking-wider text-muted dark:text-slate-500 mb-1">
+      <p className="text-xs font-medium uppercase tracking-wider text-slate-500 mb-1">
         {label}
       </p>
-      <p className={`font-heading text-2xl sm:text-3xl font-bold tracking-tight ${accent ? 'text-primary' : 'text-gray-900 dark:text-white'}`}>
+      <p className={`font-heading text-2xl sm:text-3xl font-bold tracking-tight ${accent ? 'text-primary' : 'text-white'}`}>
         {value}
       </p>
       {sub && (
-        <p className="text-xs text-muted dark:text-slate-500 mt-1">{sub}</p>
+        <p className="text-xs text-slate-500 mt-1">{sub}</p>
       )}
     </div>
   )
