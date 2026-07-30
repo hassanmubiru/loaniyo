@@ -69,7 +69,7 @@ export function GlobalStats() {
   const [totalDeposits, totalBorrows, availableLiquidity, utilizationRate, interestRate] = globalData
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700 divide-x divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 bg-white dark:bg-slate-800/50">
+    <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-white/[0.08] divide-x divide-y lg:divide-y-0 divide-white/[0.08] bg-white/[0.02]">
       <StatItem label="Total Deposits" value={`$${formatUnits(totalDeposits, 6)}`} />
       <StatItem label="Total Borrows" value={`$${formatUnits(totalBorrows, 6)}`} />
       <StatItem label="Available Liquidity" value={`$${formatUnits(availableLiquidity, 6)}`} accent />
