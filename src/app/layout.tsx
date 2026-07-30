@@ -5,6 +5,7 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { FAQ_ITEMS } from "@/lib/constants";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -21,16 +22,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Loaniyo - DeFi Lending Platform",
-  description: "Save, withdraw, borrow and repay loans on Base blockchain",
+  title: "Loaniyo - Fast Digital Loans & Lending Platform",
+  description:
+    "Apply for fast, transparent digital loans with Loaniyo. Get approved in minutes with competitive rates, bank-grade security, and 24/7 availability.",
   manifest: "/manifest.json",
   icons: {
     icon: [{ url: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
     apple: [{ url: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "Loaniyo - DeFi Lending Platform",
-    description: "Save, withdraw, borrow and repay loans on Base blockchain",
+    title: "Loaniyo - Fast Digital Loans & Lending Platform",
+    description:
+      "Apply for fast, transparent digital loans with Loaniyo. Get approved in minutes with competitive rates, bank-grade security, and 24/7 availability.",
     type: "website",
     url: "https://loaniyo.vercel.app",
     images: [
@@ -38,28 +41,32 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Loaniyo DeFi Lending Platform",
+        alt: "Loaniyo - Fast Digital Loans & Lending Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loaniyo - DeFi Lending Platform",
-    description: "Save, withdraw, borrow and repay loans on Base blockchain",
+    title: "Loaniyo - Fast Digital Loans & Lending Platform",
+    description:
+      "Apply for fast, transparent digital loans with Loaniyo. Get approved in minutes with competitive rates, bank-grade security, and 24/7 availability.",
     images: ["/og-image.png"],
   },
   keywords: [
-    "defi",
+    "loans",
     "lending",
-    "borrowing",
-    "usdc",
-    "base",
-    "ethereum",
-    "yield",
-    "interest",
+    "digital loans",
+    "fast approval",
+    "online lending",
+    "fintech",
+    "personal loans",
+    "loan calculator",
   ],
   authors: [{ name: "Loaniyo Team" }],
   category: "finance",
+  alternates: {
+    canonical: "https://loaniyo.vercel.app",
+  },
 };
 
 export const viewport = {

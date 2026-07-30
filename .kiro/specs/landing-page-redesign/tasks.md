@@ -168,7 +168,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Animate fade-up on first viewport entry (≤600ms)
     - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5_
 
-  - [ ] 8.2 Implement FooterSection component
+  - [x] 8.2 Implement FooterSection component
     - Create `src/components/landing/FooterSection.tsx` as Client Component
     - Render Loaniyo logo + tagline (≤120 chars)
     - Render link groups: Company (About, Blog, Careers), Support (Help Center, Privacy Policy, Terms, Contact), 3+ social media icons
