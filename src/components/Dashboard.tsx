@@ -151,12 +151,3 @@ function DashCard({ icon, title, children }: { icon: React.ReactNode; title: str
     </div>
   )
 }
-
-function RateRow({ label, value, tag, tagColor = 'text-slate-400 bg-white/[0.05]' }: { label: string; value: string; tag: string; tagColor?: string }) {
-  return (
-    <div className="flex items-center justify-between p-2.5 rounded-lg bg-white/[0.03]">
-      <span className="text-sm text-slate-300">{label} <span className="text-slate-500">{value}</span></span>
-      <span className={`text-[10px] font-medium px-2 py-0.5 rounded ${tagColor}`}>{tag}</span>
-    </div>
-  )
-}
