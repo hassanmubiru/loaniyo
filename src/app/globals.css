@@ -7,6 +7,18 @@ html {
   font-size: clamp(14px, 1vw + 12px, 18px);
 }
 
+/* Headings: tight tracking + balanced wrapping for an editorial feel */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
