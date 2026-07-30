@@ -76,9 +76,17 @@ export function NavigationBar() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="font-heading text-xl font-bold text-text dark:text-dark-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+            aria-label="Loaniyo home"
+            className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
           >
-            Loaniyo
+            <span className="w-9 h-9 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md shadow-green-600/25">
+              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" />
+              </svg>
+            </span>
+            <span className="font-heading text-xl font-bold bg-gradient-to-r from-green-600 to-green-800 dark:from-green-400 dark:to-emerald-500 bg-clip-text text-transparent">
+              Loaniyo
+            </span>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -140,9 +148,17 @@ export function NavigationBar() {
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, '#hero')}
-              className="font-heading text-xl font-bold text-text dark:text-dark-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
+              aria-label="Loaniyo home"
+              className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
             >
-              Loaniyo
+              <span className="w-9 h-9 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-md shadow-green-600/25">
+                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" />
+                </svg>
+              </span>
+              <span className="font-heading text-xl font-bold bg-gradient-to-r from-green-600 to-green-800 dark:from-green-400 dark:to-emerald-500 bg-clip-text text-transparent">
+                Loaniyo
+              </span>
             </a>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
