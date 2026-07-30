@@ -6,7 +6,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
 
 ## Tasks
 
-- [ ] 1. Set up project infrastructure and shared utilities
+- [x] 1. Set up project infrastructure and shared utilities
   - [x] 1.1 Install dependencies and configure Tailwind dark mode
     - Install `framer-motion`, `lucide-react`, `fast-check` (dev), `vitest` (dev), `@testing-library/react` (dev), `@testing-library/user-event` (dev), `jsdom` (dev)
     - Update `tailwind.config.js`: add `darkMode: 'class'`, extend theme with design colors (primary, secondary, accent, success, warning, muted), spacing scale, font families
@@ -14,7 +14,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Set up Vitest config file (`vitest.config.ts`) with jsdom environment and path aliases
     - _Requirements: 19.1, 19.2, 19.3, 17.1_
 
-  - [-] 1.2 Create ThemeProvider and useTheme hook
+  - [x] 1.2 Create ThemeProvider and useTheme hook
     - Create `src/providers/ThemeProvider.tsx` with context providing `theme`, `toggleTheme`, `systemPreference`
     - Implement localStorage read/write with try-catch for unavailable storage (Req 16.6)
     - Implement priority chain: localStorage → OS `prefers-color-scheme` → 'light' fallback
@@ -23,7 +23,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Create `src/lib/theme.ts` with theme constants (dark bg #0F172A, light bg #FFFFFF, etc.)
     - _Requirements: 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7_
 
-  - [-] 1.3 Create shared animation hooks and components
+  - [x] 1.3 Create shared animation hooks and components
     - Create `src/hooks/useScrollReveal.ts` using IntersectionObserver with configurable threshold (default 0.2), fires once per page load
     - Create `src/hooks/useReducedMotion.ts` using `window.matchMedia('(prefers-reduced-motion: reduce)')`
     - Create `src/components/landing/shared/ScrollReveal.tsx` wrapper component using Framer Motion with `useReducedMotion` disable support
@@ -31,7 +31,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Create `src/components/landing/shared/SectionWrapper.tsx` — adds consistent padding, max-width, section id for navigation
     - _Requirements: 17.1, 17.2, 17.3, 4.2, 4.4_
 
-  - [-] 1.4 Create static data constants and loan calculator logic
+  - [x] 1.4 Create static data constants and loan calculator logic
     - Create `src/lib/constants.ts` with all static data: NAV_LINKS, FEATURES, STATISTICS, SECURITY_FEATURES, STEPS, TESTIMONIALS, FAQ_ITEMS, TRUSTED_LOGOS
     - Create `src/lib/loanCalculator.ts` with pure `calculateLoan(amount, rate, months)` function, 0% rate edge case, input clamping, and `formatCurrency()` utility
     - _Requirements: 6.1, 6.2, 6.3, 6.7, 7.1, 12.2_
@@ -47,11 +47,11 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - **Validates: Requirements 16.5**
     - Test files: `src/lib/__tests__/loanCalculator.property.test.ts`, `src/hooks/__tests__/useTheme.property.test.ts`
 
-- [~] 2. Checkpoint - Ensure infrastructure tests pass
+- [-] 2. Checkpoint - Ensure infrastructure tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 3. Implement Navigation Bar and Hero Section
-  - [~] 3.1 Implement NavigationBar component
+- [x] 3. Implement Navigation Bar and Hero Section
+  - [x] 3.1 Implement NavigationBar component
     - Create `src/components/landing/NavigationBar.tsx` as Client Component
     - Render logo, nav links from constants, Sign In link, Get Started button, ThemeToggle
     - Implement sticky behavior with semi-transparent bg + backdrop-blur on scroll (Req 1.2)
@@ -61,7 +61,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Create `src/components/landing/shared/ThemeToggle.tsx` with sun/moon icon toggle
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 16.2_
 
-  - [~] 3.2 Implement HeroSection component
+  - [x] 3.2 Implement HeroSection component
     - Create `src/components/landing/HeroSection.tsx` as Client Component
     - Render H1 headline "Loans in Minutes. Not Days." with Space Grotesk, responsive sizing (48px desktop, 32px mobile)
     - Render subheadline (≤120 chars) and two CTA buttons (Get Started → wallet flow, See How It Works → scroll)
