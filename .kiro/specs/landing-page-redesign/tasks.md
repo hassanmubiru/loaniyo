@@ -132,7 +132,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Animate phone + floating elements on viewport entry via Framer Motion
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 7. Implement Security, Testimonials, and FAQ sections
+- [x] 7. Implement Security, Testimonials, and FAQ sections
   - [x] 7.1 Implement SecuritySection component
     - Create `src/components/landing/SecuritySection.tsx` as Client Component
     - Render 7 security measure cards with Lucide icons, titles, short descriptions (15-80 chars)
@@ -159,8 +159,8 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Support keyboard (Enter/Space) and aria-expanded attributes (Req 12.6)
     - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.6_
 
-- [ ] 8. Implement CTA and Footer sections
-  - [-] 8.1 Implement CTASection component
+- [x] 8. Implement CTA and Footer sections
+  - [x] 8.1 Implement CTASection component
     - Create `src/components/landing/CTASection.tsx` as Client Component
     - Render headline "Ready to access smarter loans?", subheadline (≤120 chars)
     - Render "Apply Now" (primary) and "Contact Sales" (secondary) buttons
@@ -177,11 +177,11 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Keyboard navigable with focus indicators (Req 14.7)
     - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7_
 
-- [~] 9. Checkpoint - Ensure all section components render correctly
+- [x] 9. Checkpoint - Ensure all section components render correctly
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 10. Wire page shell, accessibility, SEO, and responsive integration
-  - [~] 10.1 Create the landing page shell (page.tsx)
+- [x] 10. Wire page shell, accessibility, SEO, and responsive integration
+  - [x] 10.1 Create the landing page shell (page.tsx)
     - Rewrite `src/app/page.tsx` as a Server Component shell
     - Import all 14 section components in order
     - Add skip-navigation link as first focusable element (Req 18.1)
@@ -191,7 +191,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Code-split below-the-fold sections with `next/dynamic` for performance (Req 17.5)
     - _Requirements: 18.1, 18.2, 18.6, 17.5, 15.1_
 
-  - [~] 10.2 Update layout.tsx with SEO metadata and structured data
+  - [x] 10.2 Update layout.tsx with SEO metadata and structured data
     - Update page title (30-60 chars, includes "Loaniyo" + lending keyword)
     - Update meta description (120-160 chars)
     - Add Open Graph tags: og:title, og:description, og:image, og:type, og:url
@@ -200,7 +200,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Ensure all metadata renders in initial HTML without client JS (Req 20.6)
     - _Requirements: 20.1, 20.2, 20.3, 20.4, 20.5, 20.6_
 
-  - [~] 10.3 Implement responsive design and accessibility finishing touches
+  - [x] 10.3 Implement responsive design and accessibility finishing touches
     - Verify no horizontal overflow from 320px–2560px (Req 15.1)
     - Ensure single-column stacking below 768px (Req 15.2)
     - Set minimum touch targets 44×44px on mobile (Req 15.3)
@@ -216,7 +216,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - **Validates: Requirements 15.1**
     - Test file: `src/components/landing/__tests__/responsive.property.test.tsx`
 
-- [~] 11. Final checkpoint - Ensure all tests pass
+- [x] 11. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

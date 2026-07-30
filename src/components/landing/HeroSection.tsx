@@ -176,8 +176,8 @@ export function HeroSection() {
           >
             {/* Phone frame */}
             <div className="relative w-64 h-[500px] md:w-72 md:h-[560px]">
-              {/* Phone body */}
-              <div className="absolute inset-0 bg-gray-900 rounded-[3rem] shadow-2xl border-4 border-gray-700 overflow-hidden">
+              {/* Phone body — decorative illustration (Req 18.3) */}
+              <div className="absolute inset-0 bg-gray-900 rounded-[3rem] shadow-2xl border-4 border-gray-700 overflow-hidden" aria-hidden="true">
                 {/* Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10" />
 

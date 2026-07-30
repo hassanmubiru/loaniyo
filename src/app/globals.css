@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fluid typography: scales between 14px (320px viewport) and 18px (wide viewports) — Req 15.4 */
+html {
+  font-size: clamp(14px, 1vw + 12px, 18px);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,6 +23,18 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal overflow — Req 15.1 */
+}
+
+/* Minimum touch targets on mobile — Req 15.3 */
+@media (max-width: 768px) {
+  button,
+  a,
+  [role="button"],
+  input[type="range"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 @layer utilities {
