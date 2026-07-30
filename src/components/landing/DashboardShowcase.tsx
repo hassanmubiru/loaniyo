@@ -40,6 +40,7 @@ export function DashboardShowcase() {
   return (
     <SectionWrapper id="dashboard">
       <SectionHeading
+        index="04"
         eyebrow="The dashboard"
         title="Every loan, in one clear view"
         description="Track balances, upcoming payments, and repayment progress from a single dashboard built for clarity."

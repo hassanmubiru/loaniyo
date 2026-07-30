@@ -41,6 +41,7 @@ export function HowItWorksSection() {
     <SectionWrapper id="how-it-works">
       {/* Section heading */}
       <SectionHeading
+        index="03"
         eyebrow="How it works"
         title="From application to funded in seven steps"
         description="A guided path with no paperwork runarounds — most applicants are approved in minutes."

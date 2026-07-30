@@ -171,6 +171,7 @@ export function LoanCalculator() {
     <SectionWrapper id="calculator" className="border-y border-black/5 dark:border-white/5">
       <ScrollReveal>
         <SectionHeading
+          index="02"
           eyebrow="Calculator"
           title="Know your payment before you apply"
           description="Adjust the amount, rate, and term to see your monthly payment and total cost — no sign-up required."
