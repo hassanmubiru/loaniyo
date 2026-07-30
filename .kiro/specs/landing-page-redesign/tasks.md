@@ -88,7 +88,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Show "0" for numeric values until section enters viewport (Req 4.5)
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
-- [ ] 5. Implement Features Grid and Loan Calculator
+- [x] 5. Implement Features Grid and Loan Calculator
   - [x] 5.1 Implement FeaturesGrid component
     - Create `src/components/landing/FeaturesGrid.tsx` as Client Component
     - Render 10 feature cards with Lucide icons, titles (≤30 chars), descriptions (≤80 chars)
@@ -98,7 +98,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Reflow to single column <640px, ≥2 columns at 640px+ (Req 5.6)
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6_
 
-  - [-] 5.2 Implement LoanCalculator component
+  - [x] 5.2 Implement LoanCalculator component
     - Create `src/components/landing/LoanCalculator.tsx` as Client Component
     - Render sliders: amount (1,000–100,000), rate (1%–30%, step 0.5%), duration (6–60 months)
     - Wire sliders to `calculateLoan()` from `src/lib/loanCalculator.ts`, update output within 100ms
@@ -109,7 +109,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7_
 
 - [ ] 6. Implement How It Works and Showcase sections
-  - [~] 6.1 Implement HowItWorksSection component
+  - [-] 6.1 Implement HowItWorksSection component
     - Create `src/components/landing/HowItWorksSection.tsx` as Client Component
     - Render 7 steps in vertical timeline: Create Account, Verify Identity, Apply for Loan, Review, Approval, Receive Funds, Repay Easily
     - Each step: numbered indicator (1-7), title, description (≤120 chars)
@@ -117,7 +117,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Use semantic ordered list (`<ol>`) for assistive technology support (Req 7.5)
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5_
 
-  - [~] 6.2 Implement DashboardShowcase component
+  - [-] 6.2 Implement DashboardShowcase component
     - Create `src/components/landing/DashboardShowcase.tsx` as Client Component
     - Render dashboard preview spanning ≥80% content width on desktop
     - Include labeled card elements: Loan Summary, Upcoming Payments, Recent Activity, Notifications, Repayment Progress, Charts
@@ -125,7 +125,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Animate with fade-up + scale on first viewport entry (≤600ms via Framer Motion)
     - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-  - [~] 6.3 Implement MobileAppShowcase component
+  - [-] 6.3 Implement MobileAppShowcase component
     - Create `src/components/landing/MobileAppShowcase.tsx` as Client Component
     - Render animated phone mockup frame cycling through 5+ screens (Login, Dashboard, Apply, Repayment, Notifications) every 3s
     - Add 3+ floating UI elements: biometric login, push notifications, instant transfers
