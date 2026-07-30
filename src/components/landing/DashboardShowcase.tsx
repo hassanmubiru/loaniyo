@@ -11,6 +11,7 @@ import {
   BarChart3,
 } from 'lucide-react';
 import { SectionWrapper } from '@/components/landing/shared/SectionWrapper';
+import { SectionHeading } from '@/components/landing/shared/SectionHeading';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 /**
