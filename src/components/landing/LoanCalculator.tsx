@@ -74,12 +74,21 @@ function Slider({ label, value, min, max, step, onChange, formatValue, id }: Sli
         value={value}
         onChange={(e) => onChange(parseFloat(e.target.value))}
         className="w-full h-2 rounded-lg appearance-none cursor-pointer
-          bg-gray-200 dark:bg-gray-700
           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
           dark:focus:ring-accent dark:focus:ring-offset-dark-bg
-          accent-primary dark:accent-accent"
+          [&::-webkit-slider-thumb]:appearance-none
+          [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5
+          [&::-webkit-slider-thumb]:rounded-full
+          [&::-webkit-slider-thumb]:bg-primary dark:[&::-webkit-slider-thumb]:bg-accent
+          [&::-webkit-slider-thumb]:cursor-pointer
+          [&::-webkit-slider-thumb]:shadow-md
+          [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5
+          [&::-moz-range-thumb]:rounded-full
+          [&::-moz-range-thumb]:bg-primary dark:[&::-moz-range-thumb]:bg-accent
+          [&::-moz-range-thumb]:cursor-pointer
+          [&::-moz-range-thumb]:border-0"
         style={{
-          background: `linear-gradient(to right, #2563EB ${percentage}%, #e5e7eb ${percentage}%)`,
+          background: `linear-gradient(to right, var(--slider-fill, #2563EB) ${percentage}%, var(--slider-track, #e5e7eb) ${percentage}%)`,
         }}
         aria-valuemin={min}
         aria-valuemax={max}
