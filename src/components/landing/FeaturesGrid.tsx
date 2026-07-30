@@ -87,8 +87,9 @@ export function FeaturesGrid() {
         className="mb-12 md:mb-16"
       />
 
+      {/* Bordered divider grid — hairline-separated cells, no gaps */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 rounded-2xl overflow-hidden border-t border-l border-black/[0.07] dark:border-white/10 bg-white dark:bg-slate-800/50"
         variants={prefersReducedMotion ? undefined : containerVariants}
         initial={prefersReducedMotion ? undefined : 'hidden'}
         whileInView={prefersReducedMotion ? undefined : 'visible'}
@@ -96,61 +97,32 @@ export function FeaturesGrid() {
       >
         {FEATURES.map((feature, index) => {
           const IconComponent = ICON_MAP[feature.icon];
-          const isFeatured = feature.variant === 'featured';
           const accent = ACCENTS[index % ACCENTS.length];
 
           return (
             <motion.div
               key={index}
-              className={`
-                group relative rounded-2xl p-6 
-                bg-white dark:bg-slate-800 
-                border border-gray-200 dark:border-slate-700
-                hover:border-primary/40 dark:hover:border-primary/40
-                transition-colors
-                ${isFeatured ? 'sm:col-span-2' : ''}
-              `}
+              className="group flex gap-4 p-7 lg:p-8 border-b border-r border-black/[0.07] dark:border-white/10 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
               variants={prefersReducedMotion ? undefined : cardVariants}
-              whileHover={
-                prefersReducedMotion
-                  ? undefined
-                  : {
-                      y: -4,
-                      boxShadow: '0 12px 40px -12px rgba(16, 24, 40, 0.14)',
-                      transition: { duration: 0.25 },
-                    }
-              }
             >
               {/* Icon */}
               <div
-                className={`
-                  inline-flex items-center justify-center rounded-lg mb-4
-                  ${accent.bg}
-                  ${isFeatured ? 'w-12 h-12' : 'w-10 h-10'}
-                `}
+                className={`shrink-0 inline-flex items-center justify-center w-11 h-11 rounded-xl ${accent.bg}`}
               >
                 {IconComponent && (
-                  <IconComponent
-                    className={accent.text}
-                    size={isFeatured ? 28 : 24}
-                  />
+                  <IconComponent className={accent.text} size={22} />
                 )}
               </div>
 
-              {/* Title */}
-              <h3
-                className={`
-                  font-heading font-semibold text-gray-900 dark:text-white mb-2
-                  ${isFeatured ? 'text-lg' : 'text-base'}
-                `}
-              >
-                {feature.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-muted dark:text-gray-400 leading-relaxed">
-                {feature.description}
-              </p>
+              {/* Text */}
+              <div className="min-w-0">
+                <h3 className="font-heading text-base font-semibold text-gray-900 dark:text-white">
+                  {feature.title}
+                </h3>
+                <p className="mt-1.5 text-sm text-muted dark:text-slate-400 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
             </motion.div>
           );
         })}
