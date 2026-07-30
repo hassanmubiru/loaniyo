@@ -83,14 +83,13 @@ export function SecuritySection() {
 
   return (
     <SectionWrapper id="security" className="bg-slate-900 text-white">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-          Your Security Is Our Priority
-        </h2>
-        <p className="text-slate-300 max-w-2xl mx-auto text-lg">
-          We employ industry-leading security measures to keep your data and funds safe.
-        </p>
-      </div>
+      <SectionHeading
+        eyebrow="Security"
+        tone="dark"
+        title="Protected at every layer"
+        description="Bank-grade encryption, verified identities, and continuous fraud monitoring — your data and funds stay safe."
+        className="mb-12 md:mb-16"
+      />
 
       {/* Security feature cards grid */}
       <motion.div
