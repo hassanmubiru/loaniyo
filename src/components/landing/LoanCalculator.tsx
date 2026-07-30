@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
 import { SectionWrapper } from './shared/SectionWrapper';
+import { SectionHeading } from './shared/SectionHeading';
 import { ScrollReveal } from './shared/ScrollReveal';
 import { calculateLoan, formatCurrency } from '@/lib/loanCalculator';
 
@@ -169,14 +170,12 @@ export function LoanCalculator() {
   return (
     <SectionWrapper id="calculator" className="bg-green-50/50 dark:bg-slate-900/40">
       <ScrollReveal>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-dark-text mb-4">
-            Loan Calculator
-          </h2>
-          <p className="text-muted dark:text-gray-400 max-w-2xl mx-auto">
-            Estimate your monthly payments and see a breakdown of principal vs interest.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Calculator"
+          title="Know your payment before you apply"
+          description="Adjust the amount, rate, and term to see your monthly payment and total cost — no sign-up required."
+          className="mb-12 md:mb-16"
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Sliders Panel */}

@@ -15,13 +15,10 @@ export function StatisticsSection() {
   return (
     <SectionWrapper id="statistics" className="bg-green-50/50 dark:bg-slate-900/40">
       <ScrollReveal threshold={0.2}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 rounded-2xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 divide-x divide-y md:divide-y-0 divide-gray-200 dark:divide-slate-700 overflow-hidden">
           {STATISTICS.map((stat, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center p-6 rounded-xl bg-white dark:bg-slate-800/50 shadow-sm"
-            >
-              <div className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-2">
+            <div key={index} className="p-6 md:p-8">
+              <div className="font-heading text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {stat.isNumeric ? (
                   <AnimatedCounter
                     target={stat.value as number}
@@ -30,11 +27,12 @@ export function StatisticsSection() {
                   />
                 ) : (
                   <span>
-                    {stat.value}{stat.suffix}
+                    {stat.value}
+                    <span className="text-muted dark:text-slate-500">{stat.suffix}</span>
                   </span>
                 )}
               </div>
-              <p className="text-sm md:text-base text-muted dark:text-gray-400">
+              <p className="mt-2 text-sm text-muted dark:text-slate-400">
                 {stat.label}
               </p>
             </div>

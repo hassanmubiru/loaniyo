@@ -124,14 +124,12 @@ export function TestimonialsSection() {
   return (
     <SectionWrapper id="testimonials" className="bg-green-50/50 dark:bg-slate-900/40">
       <ScrollReveal>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-            What Our Users Say
-          </h2>
-          <p className="text-muted dark:text-gray-400 max-w-2xl mx-auto">
-            Hear from real users who transformed their financial journey with Loaniyo.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="Trusted by people who needed it fast"
+          description="Real borrowers who got funded when it mattered — from business owners to freelancers."
+          className="mb-12 md:mb-16"
+        />
 
         <div className="relative max-w-3xl mx-auto">
           {/* Previous Button */}
