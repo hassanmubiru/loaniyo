@@ -124,13 +124,13 @@ export function FeaturesGrid() {
               <div
                 className={`
                   inline-flex items-center justify-center rounded-lg mb-4
-                  bg-green-50 dark:bg-green-900/20
+                  ${accent.bg}
                   ${isFeatured ? 'w-12 h-12' : 'w-10 h-10'}
                 `}
               >
                 {IconComponent && (
                   <IconComponent
-                    className="text-primary"
+                    className={accent.text}
                     size={isFeatured ? 28 : 24}
                   />
                 )}
