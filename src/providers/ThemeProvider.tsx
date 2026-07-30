@@ -30,29 +30,32 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   // Detect OS color scheme preference
   const [systemPreference, setSystemPreference] = useState<Theme>('light');
 
-  // Resolve initial theme: localStorage → OS preference → 'light'
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'light';
-    const stored = readStoredTheme();
-    const osPrefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    return resolveTheme(stored, osPrefersDark);
-  });
+  // Initialize theme to 'light' on BOTH server and the client's first render so
+  // that hydration matches. The real theme (localStorage → OS preference) is
+  // resolved after mount in the effect below. The inline script in layout.tsx
+  // already applies the correct `dark` class before paint, so there is no
+  // visual flash — only React's initial render must stay consistent. (Req 16.7)
+  const [theme, setTheme] = useState<Theme>('light');
 
-  // Listen for OS color scheme changes
+  // Resolve the real theme after mount and listen for OS color scheme changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const osPreference: Theme = mediaQuery.matches ? 'dark' : 'light';
     setSystemPreference(osPreference);
+
+    // Resolve the actual theme now that we can safely read client-only APIs
+    const stored = readStoredTheme();
+    const resolved = resolveTheme(stored, mediaQuery.matches);
+    setTheme(resolved);
+    applyThemeClass(resolved);
 
     const handler = (e: MediaQueryListEvent) => {
       const newPreference: Theme = e.matches ? 'dark' : 'light';
       setSystemPreference(newPreference);
 
       // If no stored preference, follow the OS
-      const stored = readStoredTheme();
-      if (stored !== 'dark' && stored !== 'light') {
+      const currentStored = readStoredTheme();
+      if (currentStored !== 'dark' && currentStored !== 'light') {
         setTheme(newPreference);
         applyThemeClass(newPreference);
       }
