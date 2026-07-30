@@ -47,7 +47,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - **Validates: Requirements 16.5**
     - Test files: `src/lib/__tests__/loanCalculator.property.test.ts`, `src/hooks/__tests__/useTheme.property.test.ts`
 
-- [-] 2. Checkpoint - Ensure infrastructure tests pass
+- [x] 2. Checkpoint - Ensure infrastructure tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 3. Implement Navigation Bar and Hero Section
