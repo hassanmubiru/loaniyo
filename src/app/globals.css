@@ -65,3 +65,14 @@ body {
     animation: none;
   }
 }
+
+/* Loan Calculator slider custom properties */
+:root {
+  --slider-fill: #2563EB;
+  --slider-track: #e5e7eb;
+}
+
+.dark {
+  --slider-fill: #06B6D4;
+  --slider-track: #374151;
+}
