@@ -6,9 +6,32 @@ import { CONTRACTS } from '@/lib/contracts'
 import { formatUnits } from 'viem'
 import { useContractValidation, getContractInfo } from '@/lib/contractValidation'
 
+interface StatItemProps {
+  label: string
+  value: string
+  accent?: boolean
+  sub?: string
+}
+
+function StatItem({ label, value, accent, sub }: StatItemProps) {
+  return (
+    <div className="p-5 sm:p-6">
+      <p className="text-xs font-medium uppercase tracking-wider text-muted dark:text-slate-500 mb-1">
+        {label}
+      </p>
+      <p className={`font-heading text-2xl sm:text-3xl font-bold tracking-tight ${accent ? 'text-primary' : 'text-gray-900 dark:text-white'}`}>
+        {value}
+      </p>
+      {sub && (
+        <p className="text-xs text-muted dark:text-slate-500 mt-1">{sub}</p>
+      )}
+    </div>
+  )
+}
+
 export function GlobalStats() {
   const contractInfo = getContractInfo()
-  const { isValidContract, contractExists, error: validationError } = useContractValidation()
+  const { isValidContract } = useContractValidation()
   
   const { data: globalData, isLoading, error } = useReadContract({
     address: CONTRACTS.LOANIYO_LENDING.address,
@@ -19,16 +42,13 @@ export function GlobalStats() {
     }
   })
 
-  // Only use real contract data - no demo fallbacks
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700 divide-x divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 bg-white dark:bg-slate-800/50">
         {[...Array(4)].map((_, i) => (
-          <div key={i} className="bg-white rounded-lg shadow-md p-6">
-            <div className="animate-pulse">
-              <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-              <div className="h-8 bg-gray-200 rounded w-1/2"></div>
-            </div>
+          <div key={i} className="p-5 sm:p-6 animate-pulse">
+            <div className="h-3 bg-gray-200 dark:bg-slate-700 rounded w-20 mb-3" />
+            <div className="h-7 bg-gray-200 dark:bg-slate-700 rounded w-24" />
           </div>
         ))}
       </div>
@@ -37,45 +57,11 @@ export function GlobalStats() {
 
   if (error || !globalData || !contractInfo.hasValidAddress || !isValidContract) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Total Deposits
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-gray-900">
-            $0.00
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Total Borrows
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-gray-900">
-            $0.00
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Available Liquidity
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-green-600">
-            $0.00
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Interest Rate
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-green-600">
-            0.00%
-          </p>
-          <p className="text-sm text-gray-500">
-            Utilization: 0.00%
-          </p>
-        </div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700 divide-x divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 bg-white dark:bg-slate-800/50">
+        <StatItem label="Total Deposits" value="$0.00" />
+        <StatItem label="Total Borrows" value="$0.00" />
+        <StatItem label="Available Liquidity" value="$0.00" accent />
+        <StatItem label="Interest Rate" value="0.00%" accent sub="Utilization: 0.00%" />
       </div>
     )
   }
@@ -83,47 +69,11 @@ export function GlobalStats() {
   const [totalDeposits, totalBorrows, availableLiquidity, utilizationRate, interestRate] = globalData
 
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Total Deposits
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-gray-900">
-            ${formatUnits(totalDeposits, 6)}
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Total Borrows
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-gray-900">
-            ${formatUnits(totalBorrows, 6)}
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Available Liquidity
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-green-600">
-            ${formatUnits(availableLiquidity, 6)}
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
-          <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Interest Rate
-          </h3>
-          <p className="mt-2 text-2xl sm:text-3xl font-bold text-green-600">
-            {Number(interestRate) / 100}%
-          </p>
-          <p className="text-sm text-gray-500">
-            Utilization: {Number(utilizationRate) / 100}%
-          </p>
-        </div>
-      </div>
+    <div className="grid grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700 divide-x divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 bg-white dark:bg-slate-800/50">
+      <StatItem label="Total Deposits" value={`$${formatUnits(totalDeposits, 6)}`} />
+      <StatItem label="Total Borrows" value={`$${formatUnits(totalBorrows, 6)}`} />
+      <StatItem label="Available Liquidity" value={`$${formatUnits(availableLiquidity, 6)}`} accent />
+      <StatItem label="Interest Rate" value={`${Number(interestRate) / 100}%`} accent sub={`Utilization: ${Number(utilizationRate) / 100}%`} />
     </div>
   )
 }
