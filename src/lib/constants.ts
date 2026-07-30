@@ -54,10 +54,7 @@ export const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'Features', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Security', href: '#security' },
-  { label: 'Pricing', href: '#calculator' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#footer' },
 ] as const;
 
 // ─── Features (10 entries, 2 variants, no more than 4 consecutive same-size) ──
