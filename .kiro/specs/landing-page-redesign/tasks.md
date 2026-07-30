@@ -108,8 +108,8 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Ensure full keyboard operability with visible focus indicators (Req 6.6)
     - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7_
 
-- [ ] 6. Implement How It Works and Showcase sections
-  - [-] 6.1 Implement HowItWorksSection component
+- [x] 6. Implement How It Works and Showcase sections
+  - [x] 6.1 Implement HowItWorksSection component
     - Create `src/components/landing/HowItWorksSection.tsx` as Client Component
     - Render 7 steps in vertical timeline: Create Account, Verify Identity, Apply for Loan, Review, Approval, Receive Funds, Repay Easily
     - Each step: numbered indicator (1-7), title, description (≤120 chars)
@@ -117,7 +117,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Use semantic ordered list (`<ol>`) for assistive technology support (Req 7.5)
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5_
 
-  - [-] 6.2 Implement DashboardShowcase component
+  - [x] 6.2 Implement DashboardShowcase component
     - Create `src/components/landing/DashboardShowcase.tsx` as Client Component
     - Render dashboard preview spanning ≥80% content width on desktop
     - Include labeled card elements: Loan Summary, Upcoming Payments, Recent Activity, Notifications, Repayment Progress, Charts
@@ -125,7 +125,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Animate with fade-up + scale on first viewport entry (≤600ms via Framer Motion)
     - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-  - [-] 6.3 Implement MobileAppShowcase component
+  - [x] 6.3 Implement MobileAppShowcase component
     - Create `src/components/landing/MobileAppShowcase.tsx` as Client Component
     - Render animated phone mockup frame cycling through 5+ screens (Login, Dashboard, Apply, Repayment, Notifications) every 3s
     - Add 3+ floating UI elements: biometric login, push notifications, instant transfers
@@ -133,7 +133,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
 - [ ] 7. Implement Security, Testimonials, and FAQ sections
-  - [~] 7.1 Implement SecuritySection component
+  - [-] 7.1 Implement SecuritySection component
     - Create `src/components/landing/SecuritySection.tsx` as Client Component
     - Render 7 security measure cards with Lucide icons, titles, short descriptions (15-80 chars)
     - Expand on hover to reveal additional text (40-200 chars) with Framer Motion scale+fade
@@ -142,7 +142,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Use dark background variant for visual differentiation (Req 10.5)
     - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5_
 
-  - [~] 7.2 Implement TestimonialsSection component
+  - [-] 7.2 Implement TestimonialsSection component
     - Create `src/components/landing/TestimonialsSection.tsx` as Client Component
     - Render testimonial cards: avatar, name, occupation, star rating (1-5), review text
     - Include 4+ testimonial entries from constants
@@ -151,7 +151,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Loop continuously (last → first)
     - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6_
 
-  - [~] 7.3 Implement FAQSection component
+  - [-] 7.3 Implement FAQSection component
     - Create `src/components/landing/FAQSection.tsx` as Client Component
     - Render accordion with 5+ questions from constants, all collapsed initially
     - Implement exclusive-open: expand one collapses any other (Req 12.5)

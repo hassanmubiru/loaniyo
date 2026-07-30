@@ -349,7 +349,7 @@ export function MobileAppShowcase() {
                     viewport={{ once: true }}
                     animate={floatingAnimation(element.delay)}
                   >
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2 shadow-lg dark:bg-white/10 dark:border-white/20 bg-gray-100/80 dark:bg-white/10 border-gray-200 dark:border-white/20">
+                    <div className="flex items-center gap-2 bg-gray-100/80 dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-white/20 rounded-xl px-3 py-2 shadow-lg">
                       <Icon className="w-4 h-4 text-primary dark:text-white" />
                       <span className="text-gray-700 dark:text-white text-xs font-medium whitespace-nowrap">
                         {element.label}
