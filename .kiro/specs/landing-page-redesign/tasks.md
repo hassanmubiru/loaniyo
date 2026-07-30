@@ -36,7 +36,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Create `src/lib/loanCalculator.ts` with pure `calculateLoan(amount, rate, months)` function, 0% rate edge case, input clamping, and `formatCurrency()` utility
     - _Requirements: 6.1, 6.2, 6.3, 6.7, 7.1, 12.2_
 
-  - [ ]* 1.5 Write property tests for loan calculator and theme resolution
+  - [x]* 1.5 Write property tests for loan calculator and theme resolution
     - **Property 1: Loan calculation mathematical consistency** — For any valid params, monthlyPayment × months ≈ totalRepayment (±$0.01), and totalRepayment >= principal
     - **Validates: Requirements 6.3**
     - **Property 2: Currency formatting correctness** — For any non-negative number, output has exactly one currency symbol and two decimal digits
@@ -72,7 +72,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7_
 
 - [ ] 4. Implement social proof and metrics sections
-  - [~] 4.1 Implement TrustedBySection component
+  - [-] 4.1 Implement TrustedBySection component
     - Create `src/components/landing/TrustedBySection.tsx` as Client Component
     - Render "Trusted By" heading and 6+ grayscale logos (min 32px height)
     - Implement CSS marquee animation (right-to-left, ≤30s cycle, seamless loop via duplicated logo strip)
@@ -80,7 +80,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Disable marquee for `prefers-reduced-motion` — show static layout (Req 3.4)
     - _Requirements: 3.1, 3.2, 3.3, 3.4_
 
-  - [~] 4.2 Implement StatisticsSection component
+  - [-] 4.2 Implement StatisticsSection component
     - Create `src/components/landing/StatisticsSection.tsx` as Client Component
     - Render 4 metric cards: "99.9% Platform Uptime", "5 min Average Application Time", "Bank-grade Security", "24/7 Availability"
     - Use AnimatedCounter for numeric values (99.9, 5) — triggered once at 50% viewport intersection
@@ -89,7 +89,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
 - [ ] 5. Implement Features Grid and Loan Calculator
-  - [~] 5.1 Implement FeaturesGrid component
+  - [-] 5.1 Implement FeaturesGrid component
     - Create `src/components/landing/FeaturesGrid.tsx` as Client Component
     - Render 10 feature cards with Lucide icons, titles (≤30 chars), descriptions (≤80 chars)
     - Implement 2 card size variants (standard + featured) with no more than 4 consecutive same-size cards
@@ -98,7 +98,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Reflow to single column <640px, ≥2 columns at 640px+ (Req 5.6)
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6_
 
-  - [~] 5.2 Implement LoanCalculator component
+  - [-] 5.2 Implement LoanCalculator component
     - Create `src/components/landing/LoanCalculator.tsx` as Client Component
     - Render sliders: amount (1,000–100,000), rate (1%–30%, step 0.5%), duration (6–60 months)
     - Wire sliders to `calculateLoan()` from `src/lib/loanCalculator.ts`, update output within 100ms
