@@ -7,14 +7,14 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
 ## Tasks
 
 - [ ] 1. Set up project infrastructure and shared utilities
-  - [-] 1.1 Install dependencies and configure Tailwind dark mode
+  - [x] 1.1 Install dependencies and configure Tailwind dark mode
     - Install `framer-motion`, `lucide-react`, `fast-check` (dev), `vitest` (dev), `@testing-library/react` (dev), `@testing-library/user-event` (dev), `jsdom` (dev)
     - Update `tailwind.config.js`: add `darkMode: 'class'`, extend theme with design colors (primary, secondary, accent, success, warning, muted), spacing scale, font families
     - Configure `next/font` for Space Grotesk and Inter in `layout.tsx`
     - Set up Vitest config file (`vitest.config.ts`) with jsdom environment and path aliases
     - _Requirements: 19.1, 19.2, 19.3, 17.1_
 
-  - [~] 1.2 Create ThemeProvider and useTheme hook
+  - [-] 1.2 Create ThemeProvider and useTheme hook
     - Create `src/providers/ThemeProvider.tsx` with context providing `theme`, `toggleTheme`, `systemPreference`
     - Implement localStorage read/write with try-catch for unavailable storage (Req 16.6)
     - Implement priority chain: localStorage → OS `prefers-color-scheme` → 'light' fallback
@@ -23,7 +23,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Create `src/lib/theme.ts` with theme constants (dark bg #0F172A, light bg #FFFFFF, etc.)
     - _Requirements: 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7_
 
-  - [~] 1.3 Create shared animation hooks and components
+  - [-] 1.3 Create shared animation hooks and components
     - Create `src/hooks/useScrollReveal.ts` using IntersectionObserver with configurable threshold (default 0.2), fires once per page load
     - Create `src/hooks/useReducedMotion.ts` using `window.matchMedia('(prefers-reduced-motion: reduce)')`
     - Create `src/components/landing/shared/ScrollReveal.tsx` wrapper component using Framer Motion with `useReducedMotion` disable support
@@ -31,7 +31,7 @@ Transform the existing Loaniyo DeFi wallet-connect page into a premium fintech m
     - Create `src/components/landing/shared/SectionWrapper.tsx` — adds consistent padding, max-width, section id for navigation
     - _Requirements: 17.1, 17.2, 17.3, 4.2, 4.4_
 
-  - [~] 1.4 Create static data constants and loan calculator logic
+  - [-] 1.4 Create static data constants and loan calculator logic
     - Create `src/lib/constants.ts` with all static data: NAV_LINKS, FEATURES, STATISTICS, SECURITY_FEATURES, STEPS, TESTIMONIALS, FAQ_ITEMS, TRUSTED_LOGOS
     - Create `src/lib/loanCalculator.ts` with pure `calculateLoan(amount, rate, months)` function, 0% rate edge case, input clamping, and `formatCurrency()` utility
     - _Requirements: 6.1, 6.2, 6.3, 6.7, 7.1, 12.2_
