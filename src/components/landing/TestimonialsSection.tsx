@@ -122,7 +122,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <SectionWrapper id="testimonials" className="bg-green-50/50 dark:bg-slate-900/40">
+    <SectionWrapper id="testimonials" className="border-y border-black/5 dark:border-white/5">
       <ScrollReveal>
         <SectionHeading
           eyebrow="Testimonials"
