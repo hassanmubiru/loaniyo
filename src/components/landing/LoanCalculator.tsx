@@ -168,7 +168,7 @@ export function LoanCalculator() {
   );
 
   return (
-    <SectionWrapper id="calculator" className="bg-green-50/50 dark:bg-slate-900/40">
+    <SectionWrapper id="calculator" className="border-y border-black/5 dark:border-white/5">
       <ScrollReveal>
         <SectionHeading
           eyebrow="Calculator"
