@@ -80,6 +80,7 @@ export function FeaturesGrid() {
   return (
     <SectionWrapper id="features">
       <SectionHeading
+        index="01"
         eyebrow="Features"
         title="Everything you need to borrow with confidence"
         description="A complete lending toolkit — from instant applications to repayment tracking — built to be simple, fast, and secure."
